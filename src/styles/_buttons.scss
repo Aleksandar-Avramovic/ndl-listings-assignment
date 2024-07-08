@@ -1,5 +1,5 @@
 .button {
-  font-family: "LGC Regular", sans-serif;
+  font-family: $font--secondary, sans-serif;
   font-weight: 500;
   font-size: 16px;
   padding: 10px 32px;
@@ -41,9 +41,6 @@
     box-shadow: 0 0 4px 0 rgba(62, 128, 40, 0.16);
     border-radius: 50px;
     margin-right: 10px;
-    background-image: url("../assets/img/user.png");
-    background-repeat: no-repeat;
-    background-position: center;
     transition: all 0.35s ease;
   }
 }
