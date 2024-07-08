@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="/src/styles/index.css" />
   </head>
   <body>
-    <div class="overlay" id="overlay"></div>
     <!-- Header -->
     <header class="header">
+      <div class="overlay" id="overlay"></div>
       <div class="container">
         <div class="header__wrapper">
           <img
@@ -34,7 +34,14 @@
           <div class="header__btns">
             <a class="btn--transparent" href="#"
               ><span class="btn-icon"
-                ><img src="/src/assets/img/user.png" alt="user logo" /></span
+                ><img
+                  class="user-logo"
+                  src="/src/assets/img/user.png"
+                  alt="user logo" />
+                <img
+                  class="user-logo--white"
+                  src="./src/assets/img/user-white.png"
+                  alt="user logo white" /></span
               >Login</a
             >
             <a class="btn--green" href="#"><span>Sign up</span></a>
@@ -53,6 +60,7 @@
     </main>
 
     <script src="/src/js/jquery-3.7.1.slim.js"></script>
-    <script src="/src/js/main.js"></script>
+    <script src="/src/js/stickyHeader.js"></script>
+    <script src="/src/js/mobileMenuTrigger.js"></script>
   </body>
 </html>

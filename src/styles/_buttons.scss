@@ -42,15 +42,25 @@
     border-radius: 50px;
     margin-right: 10px;
     transition: all 0.35s ease;
+    .user-logo--white {
+      display: none;
+    }
   }
 }
 
-.btn--transparent:hover {
-  background-color: $green-8;
-  border-color: $green-8;
-  color: $gray-1;
-  .btn-icon {
+@media (min-width: 1200px) {
+  .btn--transparent:hover {
     background-color: $green-8;
-    background-image: url("../assets/img/user-white.png");
+    border-color: $green-8;
+    color: $gray-1;
+    .btn-icon {
+      background-color: $green-8;
+      .user-logo {
+        display: none;
+      }
+      .user-logo--white {
+        display: block;
+      }
+    }
   }
 }
