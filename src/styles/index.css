@@ -294,14 +294,17 @@ a {
 }
 @media (max-width: 1200px) {
   .header__nav {
-    display: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
     position: fixed;
     top: 0;
-    right: 0;
+    right: -300px;
     height: 100%;
     width: 300px;
     background-color: #eee;
     padding: 100px 30px;
+    transition: right 0.35s ease;
   }
   .header__nav ul {
     flex-direction: column;
@@ -314,19 +317,21 @@ a {
   .header__nav.open {
     display: flex;
     z-index: 9999;
+    right: 0;
   }
   .header__logo {
     width: 150px;
     margin: 10px 0;
   }
   .header__btns {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 20px;
     position: fixed;
-    right: 130px;
+    right: -300px;
     top: 330px;
     z-index: 10000;
+    transition: right 0.35s ease;
   }
   .header__btns .btn--transparent .btn-icon {
     width: 22px;
@@ -340,7 +345,15 @@ a {
     justify-content: center;
   }
   .header__btns.active {
+    width: auto;
     display: flex;
+    flex-direction: column;
+    right: 0;
+    transform: translateX(-52%);
+  }
+  .header__btns.active .btn--green {
+    display: flex;
+    justify-content: center;
   }
   .mobile-menu {
     display: flex;
@@ -350,16 +363,6 @@ a {
   .header__nav.open {
     justify-content: center;
     text-align: center;
-  }
-  .header__btns {
-    width: auto;
-    flex-direction: column;
-    right: 0;
-    transform: translateX(-50%);
-  }
-  .header__btns .btn--green {
-    display: flex;
-    justify-content: center;
   }
 }
 @media (max-width: 576px) {
@@ -373,15 +376,20 @@ a {
   }
   .header__btns {
     top: 290px;
+    right: -300px;
+    transition: all 0.35s ease;
+  }
+  .header__btns.active {
+    top: 290px;
     right: 0;
     transform: translateX(-90%);
   }
-  .header__btns .btn--transparent,
-  .header__btns .btn--green {
+  .header__btns.active .btn--transparent,
+  .header__btns.active .btn--green {
     font-size: 14px;
     padding: 8px 16px;
   }
-  .header__btns .btn--transparent .btn-icon {
+  .header__btns.active .btn--transparent .btn-icon {
     width: 22px;
     height: 22px;
   }

@@ -200,15 +200,17 @@
 
 @media (max-width: 1200px) {
   .header__nav {
-    display: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
     position: fixed;
     top: 0;
-    right: 0;
+    right: -300px;
     height: 100%;
     width: 300px;
     background-color: #eee;
     padding: 100px 30px;
-
+    transition: right 0.35s ease;
     ul {
       flex-direction: column;
       gap: 20px;
@@ -221,7 +223,9 @@
 
   .header__nav.open {
     display: flex;
+
     z-index: 9999;
+    right: 0;
   }
 
   .header__logo {
@@ -230,14 +234,14 @@
   }
 
   .header__btns {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 20px;
-
     position: fixed;
-    right: 130px;
+    right: -300px;
     top: 330px;
     z-index: 10000;
+    transition: right 0.35s ease;
     .btn--transparent {
       .btn-icon {
         width: 22px;
@@ -254,7 +258,15 @@
   }
 
   .header__btns.active {
+    width: auto;
     display: flex;
+    flex-direction: column;
+    right: 0;
+    transform: translateX(-52%);
+    .btn--green {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   .mobile-menu {
@@ -266,16 +278,6 @@
   .header__nav.open {
     justify-content: center;
     text-align: center;
-  }
-  .header__btns {
-    width: auto;
-    flex-direction: column;
-    right: 0;
-    transform: translateX(-50%);
-    .btn--green {
-      display: flex;
-      justify-content: center;
-    }
   }
 }
 
@@ -292,10 +294,18 @@
       }
     }
   }
+
   .header__btns {
+    top: 290px;
+    right: -300px;
+    transition: all 0.35s ease;
+  }
+
+  .header__btns.active {
     top: 290px;
     right: 0;
     transform: translateX(-90%);
+
     .btn--transparent,
     .btn--green {
       font-size: 14px;
