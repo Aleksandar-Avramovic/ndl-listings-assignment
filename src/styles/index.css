@@ -39,6 +39,11 @@ a {
   text-decoration: none;
 }
 
+body {
+  min-height: 1092px;
+  background: linear-gradient(to bottom, rgb(251, 254, 250), rgb(245, 251, 244));
+}
+
 @font-face {
   font-family: "SS01 Regular";
   src: url("../assets/fonts/BWMODELICASS01-REGULAR.OTF") format("opentype");
@@ -51,6 +56,19 @@ a {
   font-weight: 500;
   font-style: normal;
 }
+@font-face {
+  font-family: "Chap Regular";
+  src: url("../assets/fonts/Chap Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+.heading {
+  font-family: "Chap Regular";
+  font-size: 60px;
+  line-height: 1.133em;
+  color: #1e1f24;
+}
+
 .button, .btn--transparent, .btn--green {
   font-family: "LGC Regular", sans-serif;
   font-weight: 500;
@@ -394,7 +412,10 @@ a {
     height: 22px;
   }
 }
-.hero {
-  min-height: 1092px;
-  background: linear-gradient(to bottom, rgb(251, 254, 250), rgb(245, 251, 244));
+.hero__wrapper {
+  padding-top: 223px;
+}
+
+.hero__heading {
+  text-align: center;
 }/*# sourceMappingURL=index.css.map */

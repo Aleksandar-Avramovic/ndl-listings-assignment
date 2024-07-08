@@ -1,8 +1,7 @@
-.hero {
-  min-height: 1092px;
-  background: linear-gradient(
-    to bottom,
-    rgba(251, 254, 250, 1),
-    rgba(245, 251, 244, 1)
-  );
+.hero__wrapper {
+  padding-top: 223px;
+}
+
+.hero__heading {
+  text-align: center;
 }

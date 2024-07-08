@@ -12,5 +12,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Chap Regular";
+  src: url("../assets/fonts/Chap Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 $font--primary: "SS01 Regular";
 $font--secondary: "LGC Regular";
+$font--heading: "Chap Regular";

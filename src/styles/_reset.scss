@@ -38,3 +38,12 @@ img {
 a {
   text-decoration: none;
 }
+
+body {
+  min-height: 1092px;
+  background: linear-gradient(
+    to bottom,
+    rgba(251, 254, 250, 1),
+    rgba(245, 251, 244, 1)
+  );
+}
