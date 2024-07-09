@@ -541,6 +541,7 @@ body {
   justify-content: center;
   background-color: #e4f9de;
   padding: 8px 0;
+  box-shadow: 0 4px 4px 0 rgba(8, 115, 210, 0.08);
 }
 .property-listings__card .card__footer p {
   font-family: "SS01 Regular";
