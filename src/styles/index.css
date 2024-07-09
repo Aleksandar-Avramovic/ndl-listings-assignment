@@ -69,6 +69,36 @@ body {
   color: #1e1f24;
 }
 
+.subheading {
+  font-family: "SS01 Regular";
+  font-size: 24px;
+  color: #1e1f24;
+  line-height: 1.5em;
+}
+
+@media (max-width: 1400px) {
+  .heading {
+    font-size: 50px;
+  }
+  .subheading {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1200px) {
+  .heading {
+    font-size: 42px;
+  }
+}
+@media (max-width: 992px) {
+  .heading {
+    font-size: 38px;
+  }
+}
+@media (max-width: 576px) {
+  .heading {
+    font-size: 24px;
+  }
+}
 .button, .btn--transparent, .btn--green {
   font-family: "LGC Regular", sans-serif;
   font-weight: 500;
@@ -418,4 +448,31 @@ body {
 
 .hero__heading {
   text-align: center;
+}
+
+.hero__title {
+  margin-bottom: 16px;
+}
+.hero__title span {
+  margin-left: 14px;
+}
+
+@media (max-width: 1400px) {
+  .hero__title span {
+    margin-left: 0;
+  }
+}
+@media (max-width: 992px) {
+  .hero__title {
+    margin-bottom: 10px;
+  }
+}
+.hero__subtitle {
+  margin-left: 14px;
+}
+
+@media (max-width: 1400px) {
+  .hero__subtitle {
+    margin-left: 0;
+  }
 }/*# sourceMappingURL=index.css.map */

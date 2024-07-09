@@ -5,3 +5,34 @@
 .hero__heading {
   text-align: center;
 }
+
+.hero__title {
+  margin-bottom: 16px;
+  span {
+    margin-left: 14px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .hero__title {
+    span {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .hero__title {
+    margin-bottom: 10px;
+  }
+}
+
+.hero__subtitle {
+  margin-left: 14px;
+}
+
+@media (max-width: 1400px) {
+  .hero__subtitle {
+    margin-left: 0;
+  }
+}
