@@ -176,6 +176,7 @@ body {
   box-shadow: 0 0 10px -3px rgba(8, 116, 210, 0.4);
   display: flex;
   align-items: center;
+  z-index: 999;
 }
 .header.header--sticky .header__wrapper {
   padding: 20px 0;
@@ -483,8 +484,25 @@ body {
   justify-content: space-between;
 }
 
+@media (max-width: 1400px) {
+  .property-listings {
+    margin-left: 0;
+    gap: 10px;
+  }
+}
+@media (max-width: 1200px) {
+  .property-listings {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 576px) {
+  .property-listings {
+    flex-direction: column;
+  }
+}
 .property-listings__card {
-  width: 24%;
+  width: 312px;
   background-color: #fff;
   border: 1px solid #d2f4c9;
   border-radius: 8px 8px 0 0;
@@ -492,7 +510,7 @@ body {
   cursor: pointer;
 }
 .property-listings__card .card__body {
-  padding: 16px 16px 12px 16px;
+  padding: 16px;
 }
 .property-listings__card .card__footer {
   display: flex;
@@ -509,6 +527,11 @@ body {
 .property-listings__card .card__footer p span {
   font-family: "LGC Regular";
 }
+@media (max-width: 1400px) {
+  .property-listings__card .card__footer p {
+    font-size: 12px;
+  }
+}
 
 @media (min-width: 1200px) {
   .property-listings__card:hover {
@@ -516,6 +539,18 @@ body {
   }
   .property-listings__card:hover .property-listings__name {
     color: #6dbc56;
+  }
+}
+@media (max-width: 1200px) {
+  .property-listings__card {
+    width: 45%;
+  }
+}
+@media (max-width: 576px) {
+  .property-listings__card {
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 .property-listings__status.live-auction {
@@ -556,6 +591,11 @@ body {
   transition: all 0.35s ease;
 }
 
+@media (max-width: 1400px) {
+  .property-listings__name {
+    font-size: 14px;
+  }
+}
 .property-listings__address, .property-listings__date span {
   font-family: "SS01 Regular";
   font-weight: 500;
@@ -564,8 +604,14 @@ body {
   margin-bottom: 9px;
 }
 
+@media (max-width: 1400px) {
+  .property-listings__address, .property-listings__date span {
+    font-size: 12px;
+  }
+}
 .property-listings__info {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 14px;
 }
@@ -591,10 +637,30 @@ body {
   margin-bottom: 13px;
 }
 
+@media (max-width: 1200px) {
+  .property-listings__image {
+    width: 100%;
+  }
+  .property-listings__image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
 .property-listings__date p {
   font-family: "LGC Regular";
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
   color: #26411f;
+}
+
+@media (max-width: 1400px) {
+  .property-listings__date span {
+    font-size: 12px;
+  }
+  .property-listings__date p {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=index.css.map */
