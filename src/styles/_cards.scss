@@ -4,6 +4,7 @@
   margin-left: -4px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 64px;
 }
 
 @media (max-width: 1400px) {
@@ -23,6 +24,7 @@
 @media (max-width: 576px) {
   .property-listings {
     flex-direction: column;
+    margin-bottom: 34px;
   }
 }
 
@@ -73,7 +75,7 @@
 
 @media (max-width: 1200px) {
   .property-listings__card {
-    width: 45%;
+    width: 49%;
   }
 }
 

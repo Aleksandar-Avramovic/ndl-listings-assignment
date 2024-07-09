@@ -2,6 +2,12 @@
   padding-top: 223px;
 }
 
+@media (max-width: 768px) {
+  .hero__wrapper {
+    padding-top: 160px;
+  }
+}
+
 .hero__heading {
   text-align: center;
   margin-bottom: 40px;
@@ -35,5 +41,29 @@
 @media (max-width: 1400px) {
   .hero__subtitle {
     margin-left: 0;
+  }
+}
+
+.hero__btn {
+  display: flex;
+  justify-content: center;
+  margin-left: 19px;
+  a {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 1400px) {
+  .hero__btn {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__btn {
+    .btn--green {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
   }
 }
