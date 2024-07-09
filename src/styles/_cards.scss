@@ -2,6 +2,8 @@
 
 .property-listings {
   margin-left: -4px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .property-listings__card {
@@ -9,6 +11,8 @@
   background-color: $primary-white;
   border: 1px solid $green-4;
   border-radius: 8px 8px 0 0;
+  transition: all 0.35s ease;
+  cursor: pointer;
   .card__body {
     padding: 16px 16px 12px 16px;
   }
@@ -26,6 +30,15 @@
       span {
         font-family: $font--secondary;
       }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .property-listings__card:hover {
+    border-color: $green-6;
+    .property-listings__name {
+      color: $green-8;
     }
   }
 }
@@ -64,6 +77,7 @@
   line-height: 20px;
   color: $green-12;
   margin-bottom: 4px;
+  transition: all 0.35s ease;
 }
 
 .property-listings__address {
@@ -106,8 +120,10 @@
     @extend .property-listings__address;
   }
   p {
-    @extend .property-listings__name;
+    font-family: $font--secondary;
+    font-weight: 500;
     font-size: 14px;
     line-height: 16px;
+    color: $green-12;
   }
 }

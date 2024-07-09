@@ -479,6 +479,8 @@ body {
 }
 .property-listings {
   margin-left: -4px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .property-listings__card {
@@ -486,6 +488,8 @@ body {
   background-color: #fff;
   border: 1px solid #d2f4c9;
   border-radius: 8px 8px 0 0;
+  transition: all 0.35s ease;
+  cursor: pointer;
 }
 .property-listings__card .card__body {
   padding: 16px 16px 12px 16px;
@@ -506,6 +510,14 @@ body {
   font-family: "LGC Regular";
 }
 
+@media (min-width: 1200px) {
+  .property-listings__card:hover {
+    border-color: #ace09e;
+  }
+  .property-listings__card:hover .property-listings__name {
+    color: #6dbc56;
+  }
+}
 .property-listings__status.live-auction {
   position: relative;
   display: flex;
@@ -534,13 +546,14 @@ body {
   transform: translate(0, 4px);
 }
 
-.property-listings__name, .property-listings__date p {
+.property-listings__name {
   font-family: "LGC Regular";
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   color: #26411f;
   margin-bottom: 4px;
+  transition: all 0.35s ease;
 }
 
 .property-listings__address, .property-listings__date span {
@@ -579,6 +592,9 @@ body {
 }
 
 .property-listings__date p {
+  font-family: "LGC Regular";
+  font-weight: 500;
   font-size: 14px;
   line-height: 16px;
+  color: #26411f;
 }/*# sourceMappingURL=index.css.map */
