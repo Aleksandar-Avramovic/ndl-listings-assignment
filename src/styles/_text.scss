@@ -3,6 +3,12 @@
   font-size: 60px;
   line-height: 1.133em;
   color: $gray-12;
+  &__secondary {
+    font-family: $font--heading;
+    font-size: 50px;
+    line-height: 1.2em;
+    color: $gray-1;
+  }
 }
 
 .subheading {
@@ -15,6 +21,9 @@
 @media (max-width: 1400px) {
   .heading {
     font-size: 50px;
+    &__secondary {
+      font-size: 40px;
+    }
   }
 
   .subheading {
@@ -25,17 +34,26 @@
 @media (max-width: 1200px) {
   .heading {
     font-size: 42px;
+    &__secondary {
+      font-size: 32px;
+    }
   }
 }
 
 @media (max-width: 992px) {
   .heading {
     font-size: 38px;
+    &__secondary {
+      font-size: 28px;
+    }
   }
 }
 
 @media (max-width: 576px) {
   .heading {
     font-size: 24px;
+    &__secondary {
+      font-size: 24px;
+    }
   }
 }

@@ -68,6 +68,12 @@ body {
   line-height: 1.133em;
   color: #1e1f24;
 }
+.heading__secondary {
+  font-family: "Chap Regular";
+  font-size: 50px;
+  line-height: 1.2em;
+  color: #fcfcfd;
+}
 
 .subheading {
   font-family: "SS01 Regular";
@@ -80,6 +86,9 @@ body {
   .heading {
     font-size: 50px;
   }
+  .heading__secondary {
+    font-size: 40px;
+  }
   .subheading {
     font-size: 18px;
   }
@@ -88,14 +97,23 @@ body {
   .heading {
     font-size: 42px;
   }
+  .heading__secondary {
+    font-size: 32px;
+  }
 }
 @media (max-width: 992px) {
   .heading {
     font-size: 38px;
   }
+  .heading__secondary {
+    font-size: 28px;
+  }
 }
 @media (max-width: 576px) {
   .heading {
+    font-size: 24px;
+  }
+  .heading__secondary {
     font-size: 24px;
   }
 }
@@ -442,6 +460,7 @@ body {
 }
 .hero__wrapper {
   padding-top: 223px;
+  margin-bottom: 115px;
 }
 
 @media (max-width: 768px) {
@@ -688,4 +707,13 @@ body {
   .property-listings__date p {
     font-size: 12px;
   }
+}
+.info-card {
+  padding-top: 74px;
+  border-radius: 50px 50px 0 0;
+  background-color: #3e8028;
+}
+
+.info-card__title {
+  padding-right: 504px;
 }/*# sourceMappingURL=index.css.map */
