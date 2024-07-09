@@ -1,0 +1,113 @@
+// property-listings cards
+
+.property-listings {
+  margin-left: -4px;
+}
+
+.property-listings__card {
+  width: 24%;
+  background-color: $primary-white;
+  border: 1px solid $green-4;
+  border-radius: 8px 8px 0 0;
+  .card__body {
+    padding: 16px 16px 12px 16px;
+  }
+
+  .card__footer {
+    display: flex;
+    justify-content: center;
+    background-color: $green-3;
+    padding: 8px 0;
+    p {
+      font-family: $font--primary;
+      font-size: 14px;
+      line-height: 16px;
+      color: $green-11;
+      span {
+        font-family: $font--secondary;
+      }
+    }
+  }
+}
+
+.property-listings__status.live-auction {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  font-family: $font--secondary;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: capitalize;
+  color: $green-11;
+  border-radius: 4px;
+  padding: 2px 4px;
+  background-color: $green-3;
+  width: fit-content;
+  margin-bottom: 7px;
+}
+
+.property-listings__status.live-auction::before {
+  content: "";
+  background-color: $green-11;
+  height: 5px;
+  width: 5px;
+  border-radius: 50px;
+  margin-right: 4px;
+  transform: translate(0, 4px);
+}
+
+.property-listings__name {
+  font-family: $font--secondary;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: $green-12;
+  margin-bottom: 4px;
+}
+
+.property-listings__address {
+  font-family: $font--primary;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 9px;
+}
+
+.property-listings__info {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+  li {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    border-radius: 4px;
+    padding: 2px 4px;
+    background-color: $gray-3;
+    span {
+      display: flex;
+      align-items: center;
+      font-family: $font--secondary;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      color: $green-11;
+    }
+  }
+}
+
+.property-listings__image {
+  margin-bottom: 13px;
+}
+
+.property-listings__date {
+  span {
+    @extend .property-listings__address;
+  }
+  p {
+    @extend .property-listings__name;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}

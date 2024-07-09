@@ -448,6 +448,7 @@ body {
 
 .hero__heading {
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .hero__title {
@@ -475,4 +476,109 @@ body {
   .hero__subtitle {
     margin-left: 0;
   }
+}
+.property-listings {
+  margin-left: -4px;
+}
+
+.property-listings__card {
+  width: 24%;
+  background-color: #fff;
+  border: 1px solid #d2f4c9;
+  border-radius: 8px 8px 0 0;
+}
+.property-listings__card .card__body {
+  padding: 16px 16px 12px 16px;
+}
+.property-listings__card .card__footer {
+  display: flex;
+  justify-content: center;
+  background-color: #e4f9de;
+  padding: 8px 0;
+}
+.property-listings__card .card__footer p {
+  font-family: "SS01 Regular";
+  font-size: 14px;
+  line-height: 16px;
+  color: #3e8028;
+}
+.property-listings__card .card__footer p span {
+  font-family: "LGC Regular";
+}
+
+.property-listings__status.live-auction {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  font-family: "LGC Regular";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: capitalize;
+  color: #3e8028;
+  border-radius: 4px;
+  padding: 2px 4px;
+  background-color: #e4f9de;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 7px;
+}
+
+.property-listings__status.live-auction::before {
+  content: "";
+  background-color: #3e8028;
+  height: 5px;
+  width: 5px;
+  border-radius: 50px;
+  margin-right: 4px;
+  transform: translate(0, 4px);
+}
+
+.property-listings__name, .property-listings__date p {
+  font-family: "LGC Regular";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #26411f;
+  margin-bottom: 4px;
+}
+
+.property-listings__address, .property-listings__date span {
+  font-family: "SS01 Regular";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 9px;
+}
+
+.property-listings__info {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.property-listings__info li {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  border-radius: 4px;
+  padding: 2px 4px;
+  background-color: #eff0f3;
+}
+.property-listings__info li span {
+  display: flex;
+  align-items: center;
+  font-family: "LGC Regular";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #3e8028;
+}
+
+.property-listings__image {
+  margin-bottom: 13px;
+}
+
+.property-listings__date p {
+  font-size: 14px;
+  line-height: 16px;
 }/*# sourceMappingURL=index.css.map */
