@@ -232,7 +232,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 22px;
+  padding-top: 25px;
 }
 
 .header__logo {
@@ -286,8 +286,11 @@ body {
 
 .header__btns {
   display: flex;
-  gap: 1px;
+  gap: 2px;
   margin-right: -6px;
+}
+.header__btns .btn--transparent {
+  padding: 5px 32px;
 }
 
 .overlay {
@@ -737,6 +740,7 @@ body {
   padding-bottom: 150px;
   width: 100%;
   margin-left: 12px;
+  min-height: 843px;
 }
 
 @media (max-width: 1400px) {
@@ -819,8 +823,13 @@ body {
   }
 }
 
+.info-card__item-icon {
+  display: flex;
+  height: 24px;
+}
+
 .info-card__item-text {
-  margin-top: 13px;
+  margin-top: 16px;
 }
 @media (max-width: 1400px) {
   .info-card__item-text {
@@ -832,6 +841,7 @@ body {
 .info-card__item:last-child {
   display: flex;
   min-height: 120px;
+  height: auto;
   gap: 49px;
 }
 .info-card__item:last-child .info-card__item-text {
