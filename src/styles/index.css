@@ -44,6 +44,11 @@ body {
   background: linear-gradient(to bottom, rgb(251, 254, 250), rgb(245, 251, 244));
 }
 
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1350px;
+  }
+}
 @font-face {
   font-family: "SS01 Regular";
   src: url("../assets/fonts/BWMODELICASS01-REGULAR.OTF") format("opentype");
@@ -80,6 +85,14 @@ body {
   font-size: 24px;
   color: #1e1f24;
   line-height: 1.5em;
+}
+
+.text__p {
+  font-family: "SS01 Regular";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: #1e1f24;
 }
 
 @media (max-width: 1400px) {
@@ -223,12 +236,12 @@ body {
 }
 
 .header__logo {
-  margin-left: -3px;
+  margin-left: 11px;
 }
 
 .header__nav {
   width: 37%;
-  margin-left: 7px;
+  margin-left: 17px;
 }
 .header__nav ul {
   display: flex;
@@ -273,8 +286,8 @@ body {
 
 .header__btns {
   display: flex;
-  gap: 4px;
-  margin-right: -20px;
+  gap: 1px;
+  margin-right: -6px;
 }
 
 .overlay {
@@ -471,8 +484,14 @@ body {
 .hero__heading {
   text-align: center;
   margin-bottom: 40px;
+  margin-left: 3px;
 }
 
+@media (max-width: 1400px) {
+  .hero__heading {
+    margin-left: 0;
+  }
+}
 .hero__title {
   margin-bottom: 16px;
 }
@@ -520,7 +539,7 @@ body {
   }
 }
 .property-listings {
-  margin-left: -4px;
+  margin-left: 11px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 64px;
@@ -709,11 +728,65 @@ body {
   }
 }
 .info-card {
-  padding-top: 74px;
   border-radius: 50px 50px 0 0;
   background-color: #3e8028;
 }
 
+.info-card__wrapper {
+  padding-top: 74px;
+  padding-bottom: 150px;
+  width: 100%;
+  margin-left: 12px;
+}
+
 .info-card__title {
-  padding-right: 504px;
+  padding-right: 534px;
+  margin-bottom: 39px;
+}
+
+.info-card__content {
+  display: flex;
+}
+
+.info-card__img {
+  width: 45%;
+}
+
+.info-card__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  width: 55%;
+}
+
+.info-card__item {
+  height: 145px;
+  width: 351px;
+  background-color: #fcfcfd;
+  border-radius: 8px;
+  padding: 16px 24px;
+  margin-left: 5px;
+  margin-bottom: 4px;
+}
+
+.info-card__item--full {
+  width: calc(100% - 11px);
+}
+
+.info-card__item-text {
+  margin-top: 13px;
+}
+
+.info-card__item:last-child {
+  display: flex;
+  height: 120px;
+  gap: 49px;
+}
+.info-card__item:last-child .info-card__item-text {
+  margin-top: 8px;
+  width: 65%;
+}
+.info-card__item:last-child .info-card__item-btn {
+  display: flex;
+  align-items: center;
 }/*# sourceMappingURL=index.css.map */

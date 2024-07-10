@@ -18,6 +18,14 @@
   line-height: 1.5em;
 }
 
+.text__p {
+  font-family: $font--primary;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: $gray-12;
+}
+
 @media (max-width: 1400px) {
   .heading {
     font-size: 50px;
