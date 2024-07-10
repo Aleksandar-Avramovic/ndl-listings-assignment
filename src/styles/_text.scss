@@ -7,7 +7,15 @@
     font-family: $font--heading;
     font-size: 50px;
     line-height: 1.2em;
-    color: $gray-1;
+
+    &--white {
+      @extend .heading__secondary;
+      color: $gray-1;
+    }
+    &--black {
+      @extend .heading__secondary;
+      color: $gray-12;
+    }
   }
 }
 
