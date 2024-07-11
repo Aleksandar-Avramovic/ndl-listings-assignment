@@ -200,14 +200,14 @@ body {
 }
 .header {
   background-color: rgba(0, 0, 0, 0);
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   transition: all 0.35s ease;
 }
 
 .header.header--sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: #fff;
   box-shadow: 0 0 10px -3px rgba(8, 116, 210, 0.4);
   display: flex;
@@ -897,6 +897,7 @@ body {
   min-height: 1540px;
   padding-top: 131px;
   padding-left: 128px;
+  padding-right: 111px;
 }
 @media (max-width: 1400px) {
   .approach__wrapper {
@@ -935,7 +936,6 @@ body {
 .approach__block-content {
   width: 58.33333333%;
   padding-top: 6px;
-  padding-right: 250px;
 }
 .approach__block-content h3 {
   font-family: "LGC Regular";
@@ -950,7 +950,7 @@ body {
 }
 .approach__block-content .btn--transparent {
   font-family: "SS01 Regular";
-  padding: 12px 16px;
+  padding: 4px 8px;
   font-weight: 400;
   width: -moz-fit-content;
   width: fit-content;
@@ -960,6 +960,8 @@ body {
 .approach__block-content .btn--transparent .btn-icon {
   height: 20px;
   width: 20px;
+  margin-right: 4px;
+  margin-left: 6px;
 }
 .approach__block-content .btn--transparent .btn-icon .user-logo,
 .approach__block-content .btn--transparent .btn-icon .user-logo--white {
@@ -968,6 +970,10 @@ body {
 }
 .approach__block-content .btn--transparent:hover {
   color: #fff;
+}
+
+.approach__block-content-wrapper {
+  max-width: 434px;
 }
 
 .approach__block-pre-title {
@@ -980,5 +986,6 @@ body {
 }
 
 .approach__block-img {
-  width: 44%;
+  width: 41.66666667%;
+  padding-left: 53px;
 }/*# sourceMappingURL=index.css.map */

@@ -1,13 +1,13 @@
 .header {
   background-color: rgba(0, 0, 0, 0);
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   transition: all 0.35s ease;
 }
 
 .header.header--sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: #fff;
   box-shadow: 0 0 10px -3px rgba(8, 116, 210, 0.4);
   display: flex;
