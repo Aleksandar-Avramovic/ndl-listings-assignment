@@ -1,0 +1,52 @@
+.banner-card {
+  margin-top: -456px;
+  padding-left: 23px;
+}
+
+.banner-card__wrap {
+  padding: 80px;
+  max-width: 1320px;
+  background-color: $green-11;
+  border-radius: 4px;
+}
+
+.banner-card__title {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 981px;
+  margin-bottom: 32px;
+}
+
+.banner-card__cards {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 33px;
+}
+
+.banner-card__item {
+  display: flex;
+  flex-direction: column;
+  width: 32.5%;
+  border-radius: 8px;
+  padding: 24px 24px 32px;
+  background-color: $green-1;
+}
+
+.banner-card__item-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 7px;
+}
+
+.banner-card__item-title {
+  margin-bottom: 37px;
+}
+
+.banner-card__item-title.banner-card__item-title--gap-small {
+  margin-bottom: 5px;
+}
+
+.banner-card__btn {
+  display: flex;
+  justify-content: center;
+}

@@ -17,6 +17,15 @@
       color: $gray-12;
     }
   }
+  &__tertiary {
+    font-family: $font--heading;
+    font-size: 40px;
+    line-height: 1.2em;
+    &--white {
+      @extend .heading__tertiary;
+      color: $gray-1;
+    }
+  }
 }
 
 .subheading {
@@ -24,6 +33,11 @@
   font-size: 24px;
   color: $gray-12;
   line-height: 1.5em;
+  &__card {
+    @extend .subheading;
+    font-family: $font--secondary;
+    line-height: 1.33em;
+  }
 }
 
 .text__p {
@@ -40,6 +54,9 @@
     &__secondary {
       font-size: 40px;
     }
+    &__tertiary {
+      font-size: 38px;
+    }
   }
 
   .subheading {
@@ -53,6 +70,9 @@
     &__secondary {
       font-size: 32px;
     }
+    &__tertiary {
+      font-size: 32px;
+    }
   }
 }
 
@@ -62,6 +82,9 @@
     &__secondary {
       font-size: 28px;
     }
+    &__tertiary {
+      font-size: 28px;
+    }
   }
 }
 
@@ -69,6 +92,9 @@
   .heading {
     font-size: 24px;
     &__secondary {
+      font-size: 24px;
+    }
+    &__tertiary {
       font-size: 24px;
     }
   }
