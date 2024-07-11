@@ -1,6 +1,9 @@
 .banner-card {
   margin-top: -456px;
   padding-left: 23px;
+  @media (max-width: 1400px) {
+    padding-left: 0;
+  }
 }
 
 .banner-card__wrap {
@@ -8,6 +11,15 @@
   max-width: 1320px;
   background-color: $green-11;
   border-radius: 4px;
+  background-image: url("/src/assets/img/banner-bg-img.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-y: 91%;
+  background-position-x: 95%;
+
+  @media (max-width: 1200px) {
+    padding: 50px 40px;
+  }
 }
 
 .banner-card__title {
@@ -21,6 +33,9 @@
   display: flex;
   gap: 16px;
   margin-bottom: 33px;
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
 }
 
 .banner-card__item {
@@ -30,6 +45,9 @@
   border-radius: 8px;
   padding: 24px 24px 32px;
   background-color: $green-1;
+  @media (max-width: 992px) {
+    width: 100%;
+  }
 }
 
 .banner-card__item-icon {
@@ -44,6 +62,12 @@
 
 .banner-card__item-title.banner-card__item-title--gap-small {
   margin-bottom: 5px;
+}
+
+.banner-card__item-text {
+  @media (max-width: 992px) {
+    font-size: 14px;
+  }
 }
 
 .banner-card__btn {

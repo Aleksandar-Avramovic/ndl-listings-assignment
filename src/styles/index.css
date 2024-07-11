@@ -125,6 +125,9 @@ body {
   .subheading, .subheading__card {
     font-size: 18px;
   }
+  .subheading__card {
+    font-size: 24px;
+  }
 }
 @media (max-width: 1200px) {
   .heading {
@@ -136,6 +139,9 @@ body {
   .heading__tertiary, .heading__tertiary--white {
     font-size: 32px;
   }
+  .subheading__card {
+    font-size: 22px;
+  }
 }
 @media (max-width: 992px) {
   .heading {
@@ -146,6 +152,9 @@ body {
   }
   .heading__tertiary, .heading__tertiary--white {
     font-size: 28px;
+  }
+  .subheading__card {
+    font-size: 18px;
   }
 }
 @media (max-width: 576px) {
@@ -1152,12 +1161,27 @@ body {
   margin-top: -456px;
   padding-left: 23px;
 }
+@media (max-width: 1400px) {
+  .banner-card {
+    padding-left: 0;
+  }
+}
 
 .banner-card__wrap {
   padding: 80px;
   max-width: 1320px;
   background-color: #3e8028;
   border-radius: 4px;
+  background-image: url("/src/assets/img/banner-bg-img.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-y: 91%;
+  background-position-x: 95%;
+}
+@media (max-width: 1200px) {
+  .banner-card__wrap {
+    padding: 50px 40px;
+  }
 }
 
 .banner-card__title {
@@ -1172,6 +1196,11 @@ body {
   gap: 16px;
   margin-bottom: 33px;
 }
+@media (max-width: 992px) {
+  .banner-card__cards {
+    flex-direction: column;
+  }
+}
 
 .banner-card__item {
   display: flex;
@@ -1180,6 +1209,11 @@ body {
   border-radius: 8px;
   padding: 24px 24px 32px;
   background-color: #fbfefa;
+}
+@media (max-width: 992px) {
+  .banner-card__item {
+    width: 100%;
+  }
 }
 
 .banner-card__item-icon {
@@ -1194,6 +1228,12 @@ body {
 
 .banner-card__item-title.banner-card__item-title--gap-small {
   margin-bottom: 5px;
+}
+
+@media (max-width: 992px) {
+  .banner-card__item-text {
+    font-size: 14px;
+  }
 }
 
 .banner-card__btn {
