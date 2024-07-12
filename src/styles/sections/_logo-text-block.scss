@@ -1,0 +1,39 @@
+.logo-text-block {
+  background-color: $primary-black;
+  margin-top: -269px;
+  padding-top: 420px;
+  padding-left: 23px;
+  padding-bottom: 150px;
+}
+
+.logo-text-block__wrap {
+  display: flex;
+}
+
+.logo-text-block__content {
+  font-family: $font--primary;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 28px;
+  color: $gray-4;
+  max-width: 940px;
+  border-right: 1px solid $green-3;
+  padding-right: 100px;
+}
+
+.logo-text-block__logo {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.logo-text-block__powered-by {
+  font-family: $font--secondary;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: $primary-white;
+  margin-bottom: 17px;
+}

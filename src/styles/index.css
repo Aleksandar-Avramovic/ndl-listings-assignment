@@ -1165,6 +1165,8 @@ body {
   }
 }
 .banner-card__wrap {
+  position: relative;
+  z-index: 2;
   padding: 80px;
   max-width: 1320px;
   background-color: #3e8028;
@@ -1263,4 +1265,44 @@ body {
     padding: 8px 16px;
     font-size: 15px;
   }
+}
+
+.logo-text-block {
+  background-color: #000;
+  margin-top: -269px;
+  padding-top: 420px;
+  padding-left: 23px;
+  padding-bottom: 150px;
+}
+
+.logo-text-block__wrap {
+  display: flex;
+}
+
+.logo-text-block__content {
+  font-family: "SS01 Regular";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 28px;
+  color: #e7e8ec;
+  max-width: 940px;
+  border-right: 1px solid #e4f9de;
+  padding-right: 100px;
+}
+
+.logo-text-block__logo {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.logo-text-block__powered-by {
+  font-family: "LGC Regular";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  margin-bottom: 17px;
 }/*# sourceMappingURL=index.css.map */
