@@ -24,6 +24,9 @@
     &--white {
       @extend .heading__tertiary;
       color: $gray-1;
+      @media (max-width: 450px) {
+        font-size: 20px;
+      }
     }
   }
 }
@@ -106,5 +109,11 @@
     &__tertiary {
       font-size: 24px;
     }
+  }
+}
+
+@media (max-width: 450px) {
+  .heading__tertiary {
+    font-size: 20px;
   }
 }
