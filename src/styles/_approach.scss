@@ -3,23 +3,22 @@
 }
 
 .approach__wrapper {
-  min-height: 1976px;
-  padding-top: 131px;
-  padding-left: 128px;
-  padding-right: 111px;
+  // min-height: 1976px;
+  // padding-top: 131px;
+  // padding-left: 128px;
+  // padding-right: 111px;
+  padding: 131px 111px 107px 128px;
   @media (max-width: 1400px) {
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 100px;
+    padding: 100px 0;
   }
   @media (max-width: 1200px) {
-    padding-top: 80px;
+    padding: 80px 0;
   }
   @media (max-width: 992px) {
-    padding-top: 60px;
+    padding: 60px 0;
   }
   @media (max-width: 768px) {
-    padding-top: 40px;
+    padding: 40px 0;
   }
 }
 
