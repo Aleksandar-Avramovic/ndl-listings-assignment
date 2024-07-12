@@ -1156,6 +1156,7 @@ body {
 }
 
 .banner-card {
+  background-color: #fff;
   padding-left: 23px;
 }
 @media (max-width: 1400px) {
