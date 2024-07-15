@@ -18,6 +18,8 @@ h4,
 h5,
 h6,
 p,
+.copyright p span a:link,
+.copyright p span a:visited,
 ol,
 ul {
   margin: 0;
@@ -68,13 +70,13 @@ body {
   font-style: normal;
 }
 .heading {
-  font-family: "Chap Regular";
+  font-family: "Chap Regular", sans-serif;
   font-size: 60px;
   line-height: 1.133em;
   color: #1e1f24;
 }
 .heading__secondary, .heading__secondary--black, .heading__secondary--white {
-  font-family: "Chap Regular";
+  font-family: "Chap Regular", sans-serif;
   font-size: 50px;
   line-height: 1.2em;
 }
@@ -85,7 +87,7 @@ body {
   color: #1e1f24;
 }
 .heading__tertiary, .heading__tertiary--white {
-  font-family: "Chap Regular";
+  font-family: "Chap Regular", sans-serif;
   font-size: 40px;
   line-height: 1.2em;
 }
@@ -99,18 +101,18 @@ body {
 }
 
 .subheading, .subheading__card {
-  font-family: "SS01 Regular";
+  font-family: "SS01 Regular", sans-serif;
   font-size: 24px;
   color: #1e1f24;
   line-height: 1.5em;
 }
 .subheading__card {
-  font-family: "LGC Regular";
+  font-family: "LGC Regular", sans-serif;
   line-height: 1.33em;
 }
 
 .text__p {
-  font-family: "SS01 Regular";
+  font-family: "SS01 Regular", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5em;
@@ -178,6 +180,16 @@ body {
     font-size: 20px;
   }
 }
+.footer__text {
+  font-family: "SS01 Regular", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #c2ddf5;
+  max-width: 303px;
+  letter-spacing: 0.1px;
+}
+
 .button, .btn--transparent, .btn--green, .btn--orange {
   font-family: "LGC Regular", sans-serif;
   font-weight: 500;
@@ -655,17 +667,23 @@ body {
   padding: 8px 0;
   box-shadow: 0 4px 4px 0 rgba(8, 115, 210, 0.08);
 }
-.property-listings__card .card__footer p {
+.property-listings__card .card__footer p, .property-listings__card .card__footer .copyright p span a:link, .copyright p span .property-listings__card .card__footer a:link,
+.property-listings__card .card__footer .copyright p span a:visited,
+.copyright p span .property-listings__card .card__footer a:visited {
   font-family: "SS01 Regular";
   font-size: 14px;
   line-height: 16px;
   color: #3e8028;
 }
-.property-listings__card .card__footer p span {
+.property-listings__card .card__footer p span, .property-listings__card .card__footer .copyright p span a:link span, .copyright p span .property-listings__card .card__footer a:link span,
+.property-listings__card .card__footer .copyright p span a:visited span,
+.copyright p span .property-listings__card .card__footer a:visited span {
   font-family: "LGC Regular";
 }
 @media (max-width: 1400px) {
-  .property-listings__card .card__footer p {
+  .property-listings__card .card__footer p, .property-listings__card .card__footer .copyright p span a:link, .copyright p span .property-listings__card .card__footer a:link,
+  .property-listings__card .card__footer .copyright p span a:visited,
+  .copyright p span .property-listings__card .card__footer a:visited {
     font-size: 12px;
   }
 }
@@ -785,7 +803,9 @@ body {
        object-fit: cover;
   }
 }
-.property-listings__date p {
+.property-listings__date p, .property-listings__date .copyright p span a:link, .copyright p span .property-listings__date a:link,
+.property-listings__date .copyright p span a:visited,
+.copyright p span .property-listings__date a:visited {
   font-family: "LGC Regular";
   font-weight: 500;
   font-size: 14px;
@@ -797,7 +817,9 @@ body {
   .property-listings__date span {
     font-size: 12px;
   }
-  .property-listings__date p {
+  .property-listings__date p, .property-listings__date .copyright p span a:link, .copyright p span .property-listings__date a:link,
+  .property-listings__date .copyright p span a:visited,
+  .copyright p span .property-listings__date a:visited {
     font-size: 12px;
   }
 }
@@ -1021,7 +1043,9 @@ body {
   }
 }
 @media (max-width: 992px) {
-  .approach__title p {
+  .approach__title p, .approach__title .copyright p span a:link, .copyright p span .approach__title a:link,
+  .approach__title .copyright p span a:visited,
+  .copyright p span .approach__title a:visited {
     font-size: 14px;
   }
 }
@@ -1078,11 +1102,15 @@ body {
     margin-bottom: 10px;
   }
 }
-.approach__block-content p {
+.approach__block-content p, .approach__block-content .copyright p span a:link, .copyright p span .approach__block-content a:link,
+.approach__block-content .copyright p span a:visited,
+.copyright p span .approach__block-content a:visited {
   margin-bottom: 24px;
 }
 @media (max-width: 992px) {
-  .approach__block-content p {
+  .approach__block-content p, .approach__block-content .copyright p span a:link, .copyright p span .approach__block-content a:link,
+  .approach__block-content .copyright p span a:visited,
+  .copyright p span .approach__block-content a:visited {
     font-size: 14px;
     line-height: 1.3em;
     margin-bottom: 15px;
@@ -1404,4 +1432,114 @@ body {
   .logo-text-block__powered-by {
     margin-bottom: 5px;
   }
+}
+
+.footer {
+  background-color: #000;
+  padding-left: 21px;
+}
+
+.footer__wrap {
+  display: flex;
+  padding: 80px 0;
+}
+
+.footer__branding {
+  margin-right: 200px;
+}
+
+.footer__logo {
+  margin-bottom: 32px;
+}
+
+.footer__link-list {
+  margin-top: -3px;
+  margin-right: 172px;
+}
+
+.footer__info {
+  margin-top: -3px;
+}
+
+.footer__link {
+  margin-bottom: 20px;
+}
+.footer__link a:link,
+.footer__link a:visited {
+  font-family: "SS01 Regular", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fcfcfd;
+  transition: all 0.35s ease;
+}
+@media (min-width: 1200px) {
+  .footer__link a:hover {
+    color: #6dbc56;
+  }
+}
+
+.footer__link:last-child {
+  margin-bottom: 0;
+}
+
+.footer__info-contact {
+  margin-bottom: 23px;
+}
+
+.footer__info-social {
+  display: flex;
+  gap: 16px;
+}
+
+.footer__info-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d2f4c9;
+  border-radius: 50px;
+}
+
+.footer__info-social-icon {
+  display: flex;
+}
+
+.copyright {
+  padding: 16px 0;
+}
+.copyright p, .copyright p span a:link,
+.copyright p span a:visited {
+  font-family: "SS01 Regular", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #f5fbf4;
+  text-align: center;
+}
+.copyright p span a:link,
+.copyright p span a:visited {
+  position: relative;
+  transition: all 0.35s ease;
+}
+@media (min-width: 1200px) {
+  .copyright p span a:hover {
+    color: #f5fbf4;
+  }
+  .copyright p span a:hover::before {
+    width: 0;
+  }
+}
+.copyright p span a::before, .copyright p span a:link span a::before,
+.copyright p span a:visited span a::before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #f5fbf4;
+  transition: all 0.35s ease;
 }/*# sourceMappingURL=index.css.map */

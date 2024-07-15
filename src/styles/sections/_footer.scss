@@ -1,0 +1,111 @@
+.footer {
+  background-color: #000;
+
+  padding-left: 21px;
+}
+
+.footer__wrap {
+  display: flex;
+  padding: 80px 0;
+}
+
+.footer__branding {
+  margin-right: 200px;
+}
+
+.footer__logo {
+  margin-bottom: 32px;
+}
+
+.footer__link-list {
+  margin-top: -3px;
+  margin-right: 172px;
+}
+
+.footer__info {
+  margin-top: -3px;
+}
+
+.footer__link {
+  margin-bottom: 20px;
+  a:link,
+  a:visited {
+    font-family: $font--primary, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $gray-1;
+    transition: all 0.35s ease;
+  }
+  @media (min-width: 1200px) {
+    a:hover {
+      color: $green-8;
+    }
+  }
+}
+.footer__link:last-child {
+  margin-bottom: 0;
+}
+
+.footer__info-contact {
+  margin-bottom: 23px;
+}
+
+.footer__info-social {
+  display: flex;
+  gap: 16px;
+}
+
+.footer__info-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid $green-4;
+  border-radius: 50px;
+}
+
+.footer__info-social-icon {
+  display: flex;
+}
+
+.copyright {
+  padding: 16px 0;
+  p {
+    font-family: $font--primary, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: $green-2;
+    text-align: center;
+    span {
+      a:link,
+      a:visited {
+        @extend p;
+        position: relative;
+        transition: all 0.35s ease;
+      }
+      @media (min-width: 1200px) {
+        a:hover {
+          color: $green-2;
+        }
+        a:hover::before {
+          width: 0;
+        }
+      }
+
+      a::before {
+        content: "";
+        height: 1px;
+        width: 100%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $green-2;
+        transition: all 0.35s ease;
+      }
+    }
+  }
+}
