@@ -1,6 +1,7 @@
 .hero__wrapper {
-  padding-top: 224px;
+  padding-top: 223px;
   margin-bottom: 115px;
+  transition: all 0.35s ease;
   @media (max-width: 1200px) {
     padding-top: 100px;
   }

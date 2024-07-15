@@ -1,5 +1,12 @@
 const header = document.querySelector(".header");
 
-window.addEventListener("scroll", () => {
-  header.classList.toggle("header--sticky", window.scrollY > 0);
-});
+const checkHeaderPosition = () => {
+  if (window.scrollY > 0) {
+    header.classList.add("header--sticky");
+  } else {
+    header.classList.remove("header--sticky");
+  }
+};
+
+window.addEventListener("load", checkHeaderPosition);
+window.addEventListener("scroll", checkHeaderPosition);

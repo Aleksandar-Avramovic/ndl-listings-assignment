@@ -4,15 +4,14 @@
   z-index: 999;
   display: flex;
   align-items: center;
-
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100px;
   transition: all 0.35s ease;
 }
 
 .header.header--sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
   background-color: #fff;
   box-shadow: 0 0 10px -3px rgba(8, 116, 210, 0.4);
   height: 80px;
