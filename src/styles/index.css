@@ -1591,7 +1591,7 @@ body {
   }
 }
 
-.footer__info-social-link {
+.footer__info-social-link a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1599,6 +1599,11 @@ body {
   height: 40px;
   border: 1px solid #d2f4c9;
   border-radius: 50px;
+}
+@media (min-width: 1200px) {
+  .footer__info-social-link a:hover {
+    animation: pulse-animation 2s infinite;
+  }
 }
 
 .footer__info-social-icon {
@@ -1652,5 +1657,14 @@ body {
   .copyright p, .copyright p span a:link,
   .copyright p span a:visited {
     font-size: 11px;
+  }
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(210, 244, 201, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 18px rgba(210, 244, 201, 0);
   }
 }/*# sourceMappingURL=index.css.map */
