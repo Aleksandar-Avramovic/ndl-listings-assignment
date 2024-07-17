@@ -127,3 +127,8 @@
   max-width: 303px;
   letter-spacing: 0.1px;
 }
+
+::selection {
+  background-color: $primary-black;
+  color: $primary-white;
+}
