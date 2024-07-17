@@ -3,11 +3,5 @@
 @import "basic-styles/fonts";
 @import "basic-styles/text";
 @import "basic-styles/buttons";
-@import "sections/header";
-@import "sections/hero";
-@import "sections/cards";
-@import "sections/info-card";
-@import "sections/approach";
-@import "sections/banner-card";
-@import "sections/logo-text-block";
-@import "sections/footer";
+@import "./pages/homepage/homepage";
+@import "./pages/properties/properties";

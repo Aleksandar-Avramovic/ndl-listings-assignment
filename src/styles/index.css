@@ -1704,4 +1704,12 @@ body {
   100% {
     box-shadow: 0 0 0 18px rgba(210, 244, 201, 0);
   }
+}
+.search__wrap {
+  padding-top: 173px;
+  padding-left: 11px;
+}
+
+.search__title {
+  margin-bottom: 15px;
 }/*# sourceMappingURL=index.css.map */
