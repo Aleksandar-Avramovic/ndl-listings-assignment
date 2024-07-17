@@ -662,16 +662,19 @@ body {
 .property-listings__card .card__body {
   padding: 16px;
 }
-.property-listings__card .card__footer {
+.property-listings__card .card__footer, .property-listings__card .card__footer--upcoming, .property-listings__card .card__footer--live {
   display: flex;
   justify-content: center;
-  background-color: #e4f9de;
   padding: 8px 0;
   box-shadow: 0 4px 4px 0 rgba(8, 115, 210, 0.08);
 }
 .property-listings__card .card__footer p, .property-listings__card .card__footer .copyright p span a:link, .copyright p span .property-listings__card .card__footer a:link,
 .property-listings__card .card__footer .copyright p span a:visited,
-.copyright p span .property-listings__card .card__footer a:visited {
+.copyright p span .property-listings__card .card__footer a:visited, .property-listings__card .card__footer--upcoming p, .property-listings__card .card__footer--upcoming .copyright p span a:link, .copyright p span .property-listings__card .card__footer--upcoming a:link,
+.property-listings__card .card__footer--upcoming .copyright p span a:visited,
+.copyright p span .property-listings__card .card__footer--upcoming a:visited, .property-listings__card .card__footer--live p, .property-listings__card .card__footer--live .copyright p span a:link, .copyright p span .property-listings__card .card__footer--live a:link,
+.property-listings__card .card__footer--live .copyright p span a:visited,
+.copyright p span .property-listings__card .card__footer--live a:visited {
   font-family: "SS01 Regular";
   font-size: 14px;
   line-height: 16px;
@@ -679,13 +682,37 @@ body {
 }
 .property-listings__card .card__footer p span, .property-listings__card .card__footer .copyright p span a:link span, .copyright p span .property-listings__card .card__footer a:link span,
 .property-listings__card .card__footer .copyright p span a:visited span,
-.copyright p span .property-listings__card .card__footer a:visited span {
+.copyright p span .property-listings__card .card__footer a:visited span, .property-listings__card .card__footer--upcoming p span, .property-listings__card .card__footer--upcoming .copyright p span a:link span, .copyright p span .property-listings__card .card__footer--upcoming a:link span,
+.property-listings__card .card__footer--upcoming .copyright p span a:visited span,
+.copyright p span .property-listings__card .card__footer--upcoming a:visited span, .property-listings__card .card__footer--live p span, .property-listings__card .card__footer--live .copyright p span a:link span, .copyright p span .property-listings__card .card__footer--live a:link span,
+.property-listings__card .card__footer--live .copyright p span a:visited span,
+.copyright p span .property-listings__card .card__footer--live a:visited span {
   font-family: "LGC Regular";
+}
+.property-listings__card .card__footer--live {
+  background-color: #e4f9de;
+}
+.property-listings__card .card__footer--live p, .property-listings__card .card__footer--live .copyright p span a:link, .copyright p span .property-listings__card .card__footer--live a:link,
+.property-listings__card .card__footer--live .copyright p span a:visited,
+.copyright p span .property-listings__card .card__footer--live a:visited {
+  color: #3e8028;
+}
+.property-listings__card .card__footer--upcoming {
+  background-color: #eff0f3;
+}
+.property-listings__card .card__footer--upcoming p, .property-listings__card .card__footer--upcoming .copyright p span a:link, .copyright p span .property-listings__card .card__footer--upcoming a:link,
+.property-listings__card .card__footer--upcoming .copyright p span a:visited,
+.copyright p span .property-listings__card .card__footer--upcoming a:visited {
+  color: #62636c;
 }
 @media (max-width: 1400px) {
   .property-listings__card .card__footer p, .property-listings__card .card__footer .copyright p span a:link, .copyright p span .property-listings__card .card__footer a:link,
   .property-listings__card .card__footer .copyright p span a:visited,
-  .copyright p span .property-listings__card .card__footer a:visited {
+  .copyright p span .property-listings__card .card__footer a:visited, .property-listings__card .card__footer--live p, .property-listings__card .card__footer--live .copyright p span a:link, .copyright p span .property-listings__card .card__footer--live a:link,
+  .property-listings__card .card__footer--live .copyright p span a:visited,
+  .copyright p span .property-listings__card .card__footer--live a:visited, .property-listings__card .card__footer--upcoming p, .property-listings__card .card__footer--upcoming .copyright p span a:link, .copyright p span .property-listings__card .card__footer--upcoming a:link,
+  .property-listings__card .card__footer--upcoming .copyright p span a:visited,
+  .copyright p span .property-listings__card .card__footer--upcoming a:visited {
     font-size: 12px;
   }
 }
@@ -710,7 +737,7 @@ body {
     margin: 0 auto;
   }
 }
-.property-listings__status.live-auction {
+.property-listings__status, .property-listings__status--upcoming, .property-listings__status--live {
   position: relative;
   display: flex;
   justify-content: flex-start;
@@ -719,16 +746,17 @@ body {
   font-size: 12px;
   line-height: 14px;
   text-transform: capitalize;
-  color: #3e8028;
   border-radius: 4px;
   padding: 2px 4px;
-  background-color: #e4f9de;
   width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 7px;
 }
-
-.property-listings__status.live-auction::before {
+.property-listings__status--live {
+  background-color: #e4f9de;
+  color: #3e8028;
+}
+.property-listings__status--live::before {
   content: "";
   background-color: #3e8028;
   height: 5px;
@@ -736,6 +764,10 @@ body {
   border-radius: 50px;
   margin-right: 4px;
   transform: translate(0, 4px);
+}
+.property-listings__status--upcoming {
+  background-color: #eff0f3;
+  color: #62636c;
 }
 
 .property-listings__name {
@@ -792,6 +824,9 @@ body {
 
 .property-listings__image {
   margin-bottom: 13px;
+}
+.property-listings__image img {
+  border-radius: 4px;
 }
 
 @media (max-width: 1200px) {
