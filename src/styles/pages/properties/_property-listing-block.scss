@@ -83,7 +83,31 @@
   margin-bottom: 14px;
   input {
     display: none;
+    transition: all 0.35s ease;
+    &:checked + label {
+      color: $green-8;
+      transition: all 0.35s ease;
+    }
+    &:checked + label::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      left: 5px;
+      width: 4px;
+      height: 7px;
+      border: solid $primary-white;
+      border-width: 0 1px 1px 0;
+      transform: rotate(45deg);
+      transition: all 0.35s ease;
+    }
+    &:checked + label::before {
+      background-color: $green-8;
+      border-color: $green-8;
+      transition: all 0.35s ease;
+    }
   }
+
   label {
     display: block;
     position: relative;
@@ -93,7 +117,7 @@
     font-size: 14px;
     line-height: 16px;
     color: $gray-12;
-
+    transition: all 0.35s ease;
     &::before {
       content: "";
       border: 1px solid $green-6;
@@ -106,6 +130,7 @@
       position: relative;
       margin-right: 4px;
       transform: translate(-1px, -1px);
+      transition: all 0.35s ease;
     }
   }
 

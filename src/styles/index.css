@@ -1998,6 +1998,29 @@ input[type=number] {
 }
 .input-checkbox input {
   display: none;
+  transition: all 0.35s ease;
+}
+.input-checkbox input:checked + label {
+  color: #6dbc56;
+  transition: all 0.35s ease;
+}
+.input-checkbox input:checked + label::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  width: 4px;
+  height: 7px;
+  border: solid #fff;
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+  transition: all 0.35s ease;
+}
+.input-checkbox input:checked + label::before {
+  background-color: #6dbc56;
+  border-color: #6dbc56;
+  transition: all 0.35s ease;
 }
 .input-checkbox label {
   display: block;
@@ -2008,6 +2031,7 @@ input[type=number] {
   font-size: 14px;
   line-height: 16px;
   color: #1e1f24;
+  transition: all 0.35s ease;
 }
 .input-checkbox label::before {
   content: "";
@@ -2021,6 +2045,7 @@ input[type=number] {
   position: relative;
   margin-right: 4px;
   transform: translate(-1px, -1px);
+  transition: all 0.35s ease;
 }
 .input-checkbox label[for=hot-area]::before,
 .input-checkbox label[for=priced-under-100k]::before,
