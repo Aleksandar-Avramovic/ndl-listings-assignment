@@ -1,0 +1,193 @@
+.property-listing-block__wrap {
+  display: flex;
+}
+
+.property-filters {
+  max-width: 312px;
+  width: 25%;
+  margin-left: 11px;
+  height: fit-content;
+  background-color: $primary-white;
+  border: 1px solid $green-3;
+  border-radius: 4px;
+  box-shadow: 0 0 24px 0 rgba(38, 65, 31, 0.12);
+}
+
+.property-filters__wrap {
+  padding-left: 16px;
+  padding-top: 23px;
+  padding-right: 28px;
+}
+
+.property-filters__title {
+  font-family: $font--secondary;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: $gray-12;
+  margin-bottom: 14px;
+}
+
+// Accordion
+
+.property-filters__accordion {
+  padding-bottom: 38px;
+}
+
+.property-filters__accordion-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $font--secondary;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: $gray-12;
+  outline: none;
+  border: none;
+  border-top: 1px solid $green-3;
+  background-color: $primary-white;
+  padding: 19px 0 18px;
+  transition: all 0.35s ease;
+
+  svg path {
+    transition: all 0.35s ease;
+  }
+
+  @media (min-width: 1200px) {
+    &:hover {
+      color: $green-8;
+      svg path {
+        stroke: $green-8;
+      }
+    }
+  }
+}
+
+.property-filters__accordion-btn.second-btn,
+.property-filters__accordion-btn.third-btn {
+  padding-top: 26px;
+  padding-bottom: 11px;
+}
+
+.property-filters__accordion-btn.forth-btn {
+  padding-top: 26px;
+}
+
+.property-filters__accordion-content {
+  margin-bottom: 9px;
+}
+
+.input-checkbox {
+  margin-bottom: 14px;
+  input {
+    display: none;
+  }
+  label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-family: $font--primary, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: $gray-12;
+
+    &::before {
+      content: "";
+      border: 1px solid $green-6;
+      height: 16px;
+      width: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+      border-radius: 2px;
+      position: relative;
+      margin-right: 4px;
+      transform: translate(-1px, -1px);
+    }
+  }
+
+  label[for="hot-area"]::before,
+  label[for="priced-under-100k"]::before,
+  label[for="vacant-property"]::before,
+  label[for="occupied-property"]::before {
+    margin-right: 7px;
+  }
+}
+
+// Range inputs
+.range-inputs {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.input-range {
+  label {
+    font-family: $font--primary;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: $gray-12;
+  }
+
+  input {
+    outline: none;
+    display: block;
+    border: 1px solid $green-6;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0);
+    padding-left: 6px;
+    min-height: 32px;
+    font-family: $font--primary;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: $gray-12;
+    max-width: 124.5px;
+    &::placeholder {
+      color: $gray-8;
+    }
+  }
+}
+
+.input-range-line {
+  display: inline-block;
+  height: 24px;
+  margin: 0 9px;
+  font-size: 12px;
+  line-height: 14px;
+  color: $gray-12;
+}
+
+.error-notification {
+  display: none;
+}
+
+// Clear filters button
+.property-filters__btn {
+  min-width: 122px;
+  border-radius: 50px;
+  background-color: $green-3;
+  border: 1px solid $green-3;
+  font-family: $font--secondary;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: $green-11;
+  padding: 3px 10px;
+  margin-top: 10px;
+  transition: all 0.35s ease;
+
+  @media (min-width: 1200px) {
+    &:hover {
+      background-color: $gray-1;
+      border-color: $gray-1;
+      color: $green-8;
+      box-shadow: 0 8px 24px 0 rgba(38, 65, 31, 0.16);
+    }
+  }
+}

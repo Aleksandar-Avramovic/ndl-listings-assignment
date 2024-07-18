@@ -46,6 +46,23 @@ body {
   background: linear-gradient(to bottom, rgb(251, 254, 250), rgb(245, 251, 244));
 }
 
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Internet Explorer 10+ */
+input[type=number] {
+  -ms-appearance: textfield;
+}
+
 @media (min-width: 1400px) {
   .container {
     max-width: 1350px;
@@ -1895,5 +1912,191 @@ body {
     min-width: 113px;
     display: inline-block;
     text-align: center;
+  }
+}
+
+.property-listing-block__wrap {
+  display: flex;
+}
+
+.property-filters {
+  max-width: 312px;
+  width: 25%;
+  margin-left: 11px;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #fff;
+  border: 1px solid #e4f9de;
+  border-radius: 4px;
+  box-shadow: 0 0 24px 0 rgba(38, 65, 31, 0.12);
+}
+
+.property-filters__wrap {
+  padding-left: 16px;
+  padding-top: 23px;
+  padding-right: 28px;
+}
+
+.property-filters__title {
+  font-family: "LGC Regular";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #1e1f24;
+  margin-bottom: 14px;
+}
+
+.property-filters__accordion {
+  padding-bottom: 38px;
+}
+
+.property-filters__accordion-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "LGC Regular";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #1e1f24;
+  outline: none;
+  border: none;
+  border-top: 1px solid #e4f9de;
+  background-color: #fff;
+  padding: 19px 0 18px;
+  transition: all 0.35s ease;
+}
+.property-filters__accordion-btn svg path {
+  transition: all 0.35s ease;
+}
+@media (min-width: 1200px) {
+  .property-filters__accordion-btn:hover {
+    color: #6dbc56;
+  }
+  .property-filters__accordion-btn:hover svg path {
+    stroke: #6dbc56;
+  }
+}
+
+.property-filters__accordion-btn.second-btn,
+.property-filters__accordion-btn.third-btn {
+  padding-top: 26px;
+  padding-bottom: 11px;
+}
+
+.property-filters__accordion-btn.forth-btn {
+  padding-top: 26px;
+}
+
+.property-filters__accordion-content {
+  margin-bottom: 9px;
+}
+
+.input-checkbox {
+  margin-bottom: 14px;
+}
+.input-checkbox input {
+  display: none;
+}
+.input-checkbox label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-family: "SS01 Regular", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #1e1f24;
+}
+.input-checkbox label::before {
+  content: "";
+  border: 1px solid #ace09e;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 2px;
+  position: relative;
+  margin-right: 4px;
+  transform: translate(-1px, -1px);
+}
+.input-checkbox label[for=hot-area]::before,
+.input-checkbox label[for=priced-under-100k]::before,
+.input-checkbox label[for=vacant-property]::before,
+.input-checkbox label[for=occupied-property]::before {
+  margin-right: 7px;
+}
+
+.range-inputs {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.input-range label {
+  font-family: "SS01 Regular";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #1e1f24;
+}
+.input-range input {
+  outline: none;
+  display: block;
+  border: 1px solid #ace09e;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0);
+  padding-left: 6px;
+  min-height: 32px;
+  font-family: "SS01 Regular";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #1e1f24;
+  max-width: 124.5px;
+}
+.input-range input::-moz-placeholder {
+  color: #b9bbc6;
+}
+.input-range input::placeholder {
+  color: #b9bbc6;
+}
+
+.input-range-line {
+  display: inline-block;
+  height: 24px;
+  margin: 0 9px;
+  font-size: 12px;
+  line-height: 14px;
+  color: #1e1f24;
+}
+
+.error-notification {
+  display: none;
+}
+
+.property-filters__btn {
+  min-width: 122px;
+  border-radius: 50px;
+  background-color: #e4f9de;
+  border: 1px solid #e4f9de;
+  font-family: "LGC Regular";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #3e8028;
+  padding: 3px 10px;
+  margin-top: 10px;
+  transition: all 0.35s ease;
+}
+@media (min-width: 1200px) {
+  .property-filters__btn:hover {
+    background-color: #fcfcfd;
+    border-color: #fcfcfd;
+    color: #6dbc56;
+    box-shadow: 0 8px 24px 0 rgba(38, 65, 31, 0.16);
   }
 }/*# sourceMappingURL=index.css.map */

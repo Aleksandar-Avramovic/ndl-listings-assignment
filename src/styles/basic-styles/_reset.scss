@@ -48,6 +48,24 @@ body {
   );
 }
 
+// Hiding arrow spinners on number inputs
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Internet Explorer 10+ */
+input[type="number"] {
+  -ms-appearance: textfield;
+}
+
 @media (min-width: 1400px) {
   .container {
     max-width: 1350px;
