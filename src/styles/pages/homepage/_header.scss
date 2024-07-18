@@ -76,6 +76,21 @@
         transition: all 0.35s ease;
         position: relative;
       }
+      a.active,
+      a:link.active,
+      a:visited.active {
+        color: $green-8;
+      }
+      a.active::before,
+      a.active:hover::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        @media (max-width: 1200px) {
+          content: none;
+        }
+      }
       a::before,
       a::after {
         content: "";

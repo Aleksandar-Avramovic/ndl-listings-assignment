@@ -1,7 +1,7 @@
 // property-listings cards
 
 .property-listings {
-  // margin-left: -4px;
+  min-height: 380px;
   margin-left: 11px;
   display: flex;
   justify-content: space-between;
@@ -12,6 +12,7 @@
   .property-listings {
     margin-left: 0;
     gap: 10px;
+    min-height: auto;
   }
 }
 
