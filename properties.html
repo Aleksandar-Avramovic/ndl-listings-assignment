@@ -86,6 +86,277 @@
         </div>
       </div>
       <!-- Search block -->
+      <!-- Property Listing Block -->
+      <div class="property-listing-block">
+        <div class="container">
+          <div class="property-listing-blog__wrap">
+            <div class="property-filters">
+              <div class="property-filters__wrap">
+                <h2 class="property-filters__title">Filters</h2>
+                <div class="property-filters__accordion">
+                  <div>
+                    <button
+                      class="property-filters__accordion-btn"
+                      aria-label="Property type accordion button"
+                    >
+                      Property type
+                      <span class="property-filters__accordion-btn-icon">
+                        <svg
+                          width="14"
+                          height="8"
+                          viewBox="0 0 14 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13 7L7 1L1 7"
+                            stroke="#1E1F24"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <div class="property-filters__accordion-content">
+                      <fieldset>
+                        <div class="input-checkbox">
+                          <input
+                            type="checkbox"
+                            id="multifamily"
+                            name="multifamily"
+                          />
+                          <label for="multifamily"> Multifamily </label>
+                        </div>
+                        <div class="input-checkbox">
+                          <input type="checkbox" id="family" name="family" />
+                          <label for="family"> 1-4 family </label>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      class="property-filters__accordion-btn"
+                      aria-label="Square feet accordion button"
+                    >
+                      Square feet
+                      <span class="property-filters__accordion-btn-icon">
+                        <svg
+                          width="14"
+                          height="8"
+                          viewBox="0 0 14 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13 7L7 1L1 7"
+                            stroke="#1E1F24"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <div class="property-filters__accordion-content">
+                      <div class="range-inputs">
+                        <div class="input-range">
+                          <label for="minSqaureFeet">Min</label>
+                          <input
+                            class="input-small min"
+                            type="number"
+                            name="minSqaureFeet"
+                            id="minSquareFeet"
+                            placeholder="e.g.1000 sq.ft"
+                          />
+                        </div>
+                        <span class="input-range-line">-</span>
+                        <div class="input-range">
+                          <label for="maxSquareFeet">Max</label>
+                          <input
+                            class="input-small max"
+                            type="number"
+                            name="maxSquareFeet"
+                            id="maxSquareFeet"
+                            placeholder="e.g.5000 sq.ft"
+                          />
+                        </div>
+                        <span class="error-notification"
+                          >Max must be greater than minimum.</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      class="property-filters__accordion-btn"
+                      aria-label="Amount of units accordion button"
+                    >
+                      Amount of units
+
+                      <span class="property-filters__accordion-btn-icon">
+                        <svg
+                          width="14"
+                          height="8"
+                          viewBox="0 0 14 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13 7L7 1L1 7"
+                            stroke="#1E1F24"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <div class="property-filters__accordion-content">
+                      <div class="range-inputs">
+                        <div class="input-range">
+                          <label for="minAmount">Min</label>
+                          <input
+                            class="input-small min"
+                            type="number"
+                            name="minAmount"
+                            id="minAmount"
+                            placeholder="1"
+                          />
+                        </div>
+                        <span class="input-range-line">-</span>
+                        <div class="input-range">
+                          <label for="maxAmount">Max</label>
+                          <input
+                            class="input-small max"
+                            type="number"
+                            name="maxAmount"
+                            id="maxAmount"
+                            placeholder="e.g.10"
+                          />
+                        </div>
+                        <span class="error-notification"
+                          >Max must be greater than minimum.</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      class="property-filters__accordion-btn"
+                      aria-label="Featured deals accordion button"
+                    >
+                      Featured deals
+                      <span class="property-filters__accordion-btn-icon">
+                        <svg
+                          width="14"
+                          height="8"
+                          viewBox="0 0 14 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13 7L7 1L1 7"
+                            stroke="#1E1F24"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <div class="property-filters__accordion-content">
+                      <fieldset>
+                        <div class="input-checkbox">
+                          <input
+                            type="checkbox"
+                            id="priced-under-100k"
+                            name="priced-under-100k"
+                          />
+                          <label for="priced-under-100k"
+                            >Priced under $100k</label
+                          >
+                        </div>
+                        <div class="input-checkbox">
+                          <input
+                            type="checkbox"
+                            id="hot-area"
+                            name="hot-area"
+                          />
+                          <label for="hot-area">Hot area</label>
+                        </div>
+                        <div class="input-checkbox">
+                          <input
+                            type="checkbox"
+                            id="vacant-property"
+                            name="vacant-property"
+                          />
+                          <label for="vacant-property">Vacant property</label>
+                        </div>
+                        <div class="input-checkbox">
+                          <input
+                            type="checkbox"
+                            id="occupied-property"
+                            name="occupied-property"
+                          />
+                          <label for="occupied-property"
+                            >Occupied property</label
+                          >
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <button
+                    class="property-filters__btn"
+                    aria-label="Clear filters button"
+                  >
+                    Clear filters
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="property-listing-block">
+              <div class="property-listing-block__top">
+                <div class="property-listing-block__sort">
+                  <div class="filter-sorting">
+                    <div class="filter-sorting__holder">
+                      <span class="filter-sorting__holder-text">Sort by:</span>
+                      <button
+                        role="button"
+                        class="filter-sorting__btn"
+                        aria-label="Sort button"
+                      >
+                        <span>Default sorting</span>
+                        <span class="filter-sorting-icon">
+                          <svg
+                            width="12"
+                            height="8"
+                            viewBox="0 0 12 8"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1 1.5L6 6.5L11 1.5"
+                              stroke="#133051"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                    <ul class="filter-sorting__list"></ul>
+                  </div>
+                </div>
+              </div>
+              <div class="property-cards"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Property Listing Block -->
     </main>
     <!-- Footer -->
 

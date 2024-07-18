@@ -1767,6 +1767,7 @@ body {
 .search-block__wrap {
   padding-top: 173px;
   padding-left: 11px;
+  padding-bottom: 80px;
 }
 @media (max-width: 1400px) {
   .search-block__wrap {
