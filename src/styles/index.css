@@ -2057,12 +2057,23 @@ input[type=number] {
   line-height: 14px;
   color: #1e1f24;
   max-width: 124.5px;
+  transition: all 0.35s ease;
 }
 .input-range input::-moz-placeholder {
   color: #b9bbc6;
 }
 .input-range input::placeholder {
   color: #b9bbc6;
+}
+.input-range input:focus {
+  border: 1px solid #6dbc56;
+  outline: none;
+}
+@media (min-width: 1200px) {
+  .input-range input:hover {
+    border: 1px solid #6dbc56;
+    outline: none;
+  }
 }
 
 .input-range-line {

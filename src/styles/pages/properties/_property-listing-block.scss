@@ -148,8 +148,19 @@
     line-height: 14px;
     color: $gray-12;
     max-width: 124.5px;
+    transition: all 0.35s ease;
     &::placeholder {
       color: $gray-8;
+    }
+    &:focus {
+      border: 1px solid $green-8;
+      outline: none;
+    }
+    @media (min-width: 1200px) {
+      &:hover {
+        border: 1px solid $green-8;
+        outline: none;
+      }
     }
   }
 }
