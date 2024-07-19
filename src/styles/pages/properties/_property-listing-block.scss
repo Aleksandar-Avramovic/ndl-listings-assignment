@@ -48,8 +48,18 @@
   border: none;
   border-top: 1px solid $green-3;
   background-color: $primary-white;
-  padding: 19px 0 18px;
+  padding: 20px 0;
   transition: all 0.35s ease;
+
+  .property-filters__accordion-btn-icon {
+    transition: all 0.35s ease;
+  }
+
+  &.active {
+    .property-filters__accordion-btn-icon {
+      transform: rotate3d(1, 0, 0, -180deg);
+    }
+  }
 
   svg path {
     transition: all 0.35s ease;
@@ -65,20 +75,22 @@
   }
 }
 
-.property-filters__accordion-btn.second-btn,
-.property-filters__accordion-btn.third-btn {
-  padding-top: 26px;
-  padding-bottom: 11px;
-}
-
-.property-filters__accordion-btn.forth-btn {
-  padding-top: 26px;
-}
-
 .property-filters__accordion-content {
-  margin-bottom: 9px;
+  margin-bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  transition: all 0.35s ease;
 }
 
+.property-filters__accordion-content.active {
+  margin-bottom: 9px;
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+}
+
+// Checkbox inputs
 .input-checkbox {
   margin-bottom: 14px;
   input {
@@ -181,6 +193,9 @@
       border: 1px solid $green-8;
       outline: none;
     }
+    &.error {
+      border-color: $primary-error;
+    }
     @media (min-width: 1200px) {
       &:hover {
         border: 1px solid $green-8;
@@ -200,7 +215,22 @@
 }
 
 .error-notification {
-  display: none;
+  color: $primary-error;
+  font-family: $font--primary, sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1;
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 // Clear filters button

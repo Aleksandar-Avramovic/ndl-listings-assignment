@@ -96,7 +96,7 @@
                 <div class="property-filters__accordion">
                   <div class="property-filters__accordion-wrap">
                     <button
-                      class="property-filters__accordion-btn first-btn"
+                      class="property-filters__accordion-btn active"
                       aria-label="Property type accordion button"
                     >
                       Property type
@@ -109,8 +109,8 @@
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M13 7L7 1L1 7"
-                            stroke="#1E1F24"
+                            d="M1 1L7 7L13 1"
+                            stroke="black"
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -118,7 +118,7 @@
                         </svg>
                       </span>
                     </button>
-                    <div class="property-filters__accordion-content">
+                    <div class="property-filters__accordion-content active">
                       <fieldset>
                         <div class="input-checkbox">
                           <input
@@ -137,7 +137,7 @@
                   </div>
                   <div class="property-filters__accordion-wrap">
                     <button
-                      class="property-filters__accordion-btn second-btn"
+                      class="property-filters__accordion-btn active"
                       aria-label="Square feet accordion button"
                     >
                       Square feet
@@ -150,8 +150,8 @@
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M13 7L7 1L1 7"
-                            stroke="#1E1F24"
+                            d="M1 1L7 7L13 1"
+                            stroke="black"
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -159,14 +159,14 @@
                         </svg>
                       </span>
                     </button>
-                    <div class="property-filters__accordion-content">
+                    <div class="property-filters__accordion-content active">
                       <div class="range-inputs">
                         <div class="input-range">
-                          <label for="minSqaureFeet">Min</label>
+                          <label for="minSquareFeet">Min</label>
                           <input
                             class="input-small min"
                             type="number"
-                            name="minSqaureFeet"
+                            name="minSquareFeet"
                             id="minSquareFeet"
                             placeholder="e.g.1000 sq.ft"
                           />
@@ -182,7 +182,7 @@
                             placeholder="e.g.5000 sq.ft"
                           />
                         </div>
-                        <span class="error-notification"
+                        <span id="errorMsgSquareFeet" class="error-notification"
                           >Max must be greater than minimum.</span
                         >
                       </div>
@@ -190,7 +190,7 @@
                   </div>
                   <div class="property-filters__accordion-wrap">
                     <button
-                      class="property-filters__accordion-btn third-btn"
+                      class="property-filters__accordion-btn active"
                       aria-label="Amount of units accordion button"
                     >
                       Amount of units
@@ -204,8 +204,8 @@
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M13 7L7 1L1 7"
-                            stroke="#1E1F24"
+                            d="M1 1L7 7L13 1"
+                            stroke="black"
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -213,7 +213,7 @@
                         </svg>
                       </span>
                     </button>
-                    <div class="property-filters__accordion-content">
+                    <div class="property-filters__accordion-content active">
                       <div class="range-inputs">
                         <div class="input-range">
                           <label for="minAmount">Min</label>
@@ -236,15 +236,15 @@
                             placeholder="e.g.10"
                           />
                         </div>
-                        <span class="error-notification"
+                        <span id="errorMsgAmount" class="error-notification"
                           >Max must be greater than minimum.</span
                         >
                       </div>
                     </div>
                   </div>
-                  <div class="property-filters__accordion-wrap">
+                  <div class="propertyfilters__accordion-wrap">
                     <button
-                      class="property-filters__accordion-btn forth-btn"
+                      class="property-filters__accordion-btn active"
                       aria-label="Featured deals accordion button"
                     >
                       Featured deals
@@ -257,8 +257,8 @@
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M13 7L7 1L1 7"
-                            stroke="#1E1F24"
+                            d="M1 1L7 7L13 1"
+                            stroke="black"
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -266,7 +266,7 @@
                         </svg>
                       </span>
                     </button>
-                    <div class="property-filters__accordion-content">
+                    <div class="property-filters__accordion-content active">
                       <fieldset>
                         <div class="input-checkbox">
                           <input
@@ -510,5 +510,6 @@
     <script src="/src/js/jquery-3.7.1.slim.js"></script>
     <script src="/src/js/stickyHeader.js"></script>
     <script src="/src/js/mobileMenuTrigger.js"></script>
+    <script src="/src/js/accordion.js"></script>
   </body>
 </html>
