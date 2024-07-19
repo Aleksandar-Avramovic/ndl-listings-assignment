@@ -71,6 +71,15 @@
         color: $gray-11;
       }
     }
+
+    &--completed {
+      @extend .card__footer;
+      background-color: $primary-white;
+      border-top: 1px solid $green-4;
+      p {
+        color: $green-12;
+      }
+    }
   }
 
   @media (max-width: 1400px) {
@@ -138,6 +147,11 @@
     @extend .property-listings__status;
     background-color: $gray-3;
     color: $gray-11;
+  }
+  &--completed {
+    @extend .property-listings__status;
+    background-color: $green-12;
+    color: $gray-1;
   }
 }
 

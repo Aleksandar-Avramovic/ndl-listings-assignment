@@ -738,7 +738,7 @@ input[type=number] {
 .property-listings__card .card__body {
   padding: 16px;
 }
-.property-listings__card .card__footer, .property-listings__card .card__footer--upcoming, .property-listings__card .card__footer--live {
+.property-listings__card .card__footer, .property-listings__card .card__footer--completed, .property-listings__card .card__footer--upcoming, .property-listings__card .card__footer--live {
   display: flex;
   justify-content: center;
   padding: 8px 0;
@@ -746,7 +746,9 @@ input[type=number] {
 }
 .property-listings__card .card__footer p, .property-listings__card .card__footer .copyright p span a:link, .copyright p span .property-listings__card .card__footer a:link,
 .property-listings__card .card__footer .copyright p span a:visited,
-.copyright p span .property-listings__card .card__footer a:visited, .property-listings__card .card__footer--upcoming p, .property-listings__card .card__footer--upcoming .copyright p span a:link, .copyright p span .property-listings__card .card__footer--upcoming a:link,
+.copyright p span .property-listings__card .card__footer a:visited, .property-listings__card .card__footer--completed p, .property-listings__card .card__footer--completed .copyright p span a:link, .copyright p span .property-listings__card .card__footer--completed a:link,
+.property-listings__card .card__footer--completed .copyright p span a:visited,
+.copyright p span .property-listings__card .card__footer--completed a:visited, .property-listings__card .card__footer--upcoming p, .property-listings__card .card__footer--upcoming .copyright p span a:link, .copyright p span .property-listings__card .card__footer--upcoming a:link,
 .property-listings__card .card__footer--upcoming .copyright p span a:visited,
 .copyright p span .property-listings__card .card__footer--upcoming a:visited, .property-listings__card .card__footer--live p, .property-listings__card .card__footer--live .copyright p span a:link, .copyright p span .property-listings__card .card__footer--live a:link,
 .property-listings__card .card__footer--live .copyright p span a:visited,
@@ -758,7 +760,9 @@ input[type=number] {
 }
 .property-listings__card .card__footer p span, .property-listings__card .card__footer .copyright p span a:link span, .copyright p span .property-listings__card .card__footer a:link span,
 .property-listings__card .card__footer .copyright p span a:visited span,
-.copyright p span .property-listings__card .card__footer a:visited span, .property-listings__card .card__footer--upcoming p span, .property-listings__card .card__footer--upcoming .copyright p span a:link span, .copyright p span .property-listings__card .card__footer--upcoming a:link span,
+.copyright p span .property-listings__card .card__footer a:visited span, .property-listings__card .card__footer--completed p span, .property-listings__card .card__footer--completed .copyright p span a:link span, .copyright p span .property-listings__card .card__footer--completed a:link span,
+.property-listings__card .card__footer--completed .copyright p span a:visited span,
+.copyright p span .property-listings__card .card__footer--completed a:visited span, .property-listings__card .card__footer--upcoming p span, .property-listings__card .card__footer--upcoming .copyright p span a:link span, .copyright p span .property-listings__card .card__footer--upcoming a:link span,
 .property-listings__card .card__footer--upcoming .copyright p span a:visited span,
 .copyright p span .property-listings__card .card__footer--upcoming a:visited span, .property-listings__card .card__footer--live p span, .property-listings__card .card__footer--live .copyright p span a:link span, .copyright p span .property-listings__card .card__footer--live a:link span,
 .property-listings__card .card__footer--live .copyright p span a:visited span,
@@ -781,6 +785,15 @@ input[type=number] {
 .copyright p span .property-listings__card .card__footer--upcoming a:visited {
   color: #62636c;
 }
+.property-listings__card .card__footer--completed {
+  background-color: #fff;
+  border-top: 1px solid #d2f4c9;
+}
+.property-listings__card .card__footer--completed p, .property-listings__card .card__footer--completed .copyright p span a:link, .copyright p span .property-listings__card .card__footer--completed a:link,
+.property-listings__card .card__footer--completed .copyright p span a:visited,
+.copyright p span .property-listings__card .card__footer--completed a:visited {
+  color: #26411f;
+}
 @media (max-width: 1400px) {
   .property-listings__card .card__footer p, .property-listings__card .card__footer .copyright p span a:link, .copyright p span .property-listings__card .card__footer a:link,
   .property-listings__card .card__footer .copyright p span a:visited,
@@ -788,7 +801,9 @@ input[type=number] {
   .property-listings__card .card__footer--live .copyright p span a:visited,
   .copyright p span .property-listings__card .card__footer--live a:visited, .property-listings__card .card__footer--upcoming p, .property-listings__card .card__footer--upcoming .copyright p span a:link, .copyright p span .property-listings__card .card__footer--upcoming a:link,
   .property-listings__card .card__footer--upcoming .copyright p span a:visited,
-  .copyright p span .property-listings__card .card__footer--upcoming a:visited {
+  .copyright p span .property-listings__card .card__footer--upcoming a:visited, .property-listings__card .card__footer--completed p, .property-listings__card .card__footer--completed .copyright p span a:link, .copyright p span .property-listings__card .card__footer--completed a:link,
+  .property-listings__card .card__footer--completed .copyright p span a:visited,
+  .copyright p span .property-listings__card .card__footer--completed a:visited {
     font-size: 12px;
   }
 }
@@ -813,7 +828,7 @@ input[type=number] {
     margin: 0 auto;
   }
 }
-.property-listings__status, .property-listings__status--upcoming, .property-listings__status--live {
+.property-listings__status, .property-listings__status--completed, .property-listings__status--upcoming, .property-listings__status--live {
   position: relative;
   display: flex;
   justify-content: flex-start;
@@ -844,6 +859,10 @@ input[type=number] {
 .property-listings__status--upcoming {
   background-color: #eff0f3;
   color: #62636c;
+}
+.property-listings__status--completed {
+  background-color: #26411f;
+  color: #fcfcfd;
 }
 
 .property-listings__name {
