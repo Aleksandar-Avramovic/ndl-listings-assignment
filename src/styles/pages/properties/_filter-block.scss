@@ -1,10 +1,12 @@
-.property-listing-block__wrap {
+.property-listing__wrap {
   display: flex;
+  margin-right: -24px;
 }
 
 .property-filters {
   max-width: 312px;
   width: 25%;
+  padding-inline: 15px;
   margin-left: 11px;
   height: fit-content;
   background-color: $primary-white;
@@ -14,9 +16,8 @@
 }
 
 .property-filters__wrap {
-  padding-left: 16px;
   padding-top: 23px;
-  padding-right: 28px;
+  padding-right: 13px;
 }
 
 .property-filters__title {
