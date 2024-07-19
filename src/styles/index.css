@@ -2294,4 +2294,10 @@ input[type=number] {
 .filter-sorting__list.active-dropdown {
   opacity: 1;
   transform: scale(1, 1);
+}
+
+.property-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }/*# sourceMappingURL=index.css.map */
