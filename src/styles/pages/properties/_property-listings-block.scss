@@ -14,6 +14,10 @@
   max-width: fit-content;
 }
 
+.filter-sorting {
+  position: relative;
+}
+
 .filter-sorting__holder {
   display: flex;
   align-items: center;
@@ -57,5 +61,55 @@
     font-size: 12px;
     color: #1e1f24;
     transition: all 0.35s ease;
+  }
+}
+
+// Filter Sorting List
+.filter-sorting__list {
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 100%;
+  width: 255px;
+  max-height: 300px;
+  overflow: auto;
+  margin: 0;
+  list-style-type: none;
+  transform-origin: top left;
+  transform: scale(1, 0);
+  transition: all 0.3s ease-in-out;
+  z-index: 5;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 8px 0 rgba(20, 49, 81, 0.059);
+  scrollbar-width: thin;
+  scrollbar-color: $green-4 #fff;
+
+  li {
+    color: #1e1f24;
+    font-family: $font--primary, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 8px 5px;
+    transition: all 0.35s ease;
+    border-bottom: 1px solid $green-4;
+    cursor: pointer;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    @media (min-width: 1200px) {
+      &:hover {
+        color: $green-8;
+      }
+    }
+  }
+
+  &.active-dropdown {
+    opacity: 1;
+    transform: scale(1, 1);
   }
 }
