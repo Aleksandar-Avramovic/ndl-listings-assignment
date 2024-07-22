@@ -3,3 +3,61 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+
+.pagination__holder {
+  display: flex;
+  justify-content: flex-end;
+  margin: 40px auto 20px;
+}
+
+.pagination-button {
+  background-color: $primary-white;
+  border: 1px solid $green-11;
+  border-radius: 50%;
+  color: $green-8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font--primary, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 8px;
+  outline: none;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  transition: all 0.35s ease;
+  cursor: pointer;
+  @media (min-width: 1200px) {
+    &:hover {
+      color: $green-11;
+      border-color: $green-11;
+      background-color: $green-3;
+    }
+  }
+}
+
+.pagination-button.current-page {
+  border-color: $green-8;
+  color: $green-11;
+  background-color: $green-3;
+  transition: all 0.35s ease;
+}
+
+.pagination-prev,
+.pagination-next {
+  @extend .pagination-button;
+  border-color: $green-6;
+}
+
+.pagination-prev {
+  svg {
+    transform: rotate(90deg);
+  }
+}
+.pagination-next {
+  svg {
+    transform: rotate(-90deg);
+  }
+}

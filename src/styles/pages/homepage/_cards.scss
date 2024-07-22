@@ -155,6 +155,14 @@
   }
 }
 
+.property-listings__name,
+.property-listings__address {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .property-listings__name {
   font-family: $font--secondary;
   font-weight: 500;

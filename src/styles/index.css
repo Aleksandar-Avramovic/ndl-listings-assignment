@@ -865,6 +865,15 @@ input[type=number] {
   color: #fcfcfd;
 }
 
+.property-listings__name,
+.property-listings__address,
+.property-listings__date span {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .property-listings__name {
   font-family: "LGC Regular";
   font-weight: 500;
@@ -2300,4 +2309,61 @@ input[type=number] {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+.pagination__holder {
+  display: flex;
+  justify-content: flex-end;
+  margin: 40px auto 20px;
+}
+
+.pagination-button, .pagination-prev,
+.pagination-next {
+  background-color: #fff;
+  border: 1px solid #3e8028;
+  border-radius: 50%;
+  color: #6dbc56;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "SS01 Regular", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 8px;
+  outline: none;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+@media (min-width: 1200px) {
+  .pagination-button:hover, .pagination-prev:hover,
+  .pagination-next:hover {
+    color: #3e8028;
+    border-color: #3e8028;
+    background-color: #e4f9de;
+  }
+}
+
+.pagination-button.current-page, .current-page.pagination-prev,
+.current-page.pagination-next {
+  border-color: #6dbc56;
+  color: #3e8028;
+  background-color: #e4f9de;
+  transition: all 0.35s ease;
+}
+
+.pagination-prev,
+.pagination-next {
+  border-color: #ace09e;
+}
+
+.pagination-prev svg {
+  transform: rotate(90deg);
+}
+
+.pagination-next svg {
+  transform: rotate(-90deg);
 }/*# sourceMappingURL=index.css.map */
