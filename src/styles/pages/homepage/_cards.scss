@@ -1,7 +1,7 @@
 // property-listings cards
 
 .property-listings {
-  min-height: 380px;
+  // min-height: 380px;
   margin-left: 11px;
   display: flex;
   justify-content: space-between;
@@ -31,6 +31,9 @@
 }
 
 .property-listings__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 312px;
   background-color: $primary-white;
   border: 1px solid $green-4;
@@ -45,7 +48,7 @@
     display: flex;
     justify-content: center;
     padding: 8px 0;
-    box-shadow: 0 4px 4px 0 rgba(8, 115, 210, 0.08);
+
     p {
       font-family: $font--primary;
       font-size: 14px;
@@ -94,6 +97,7 @@
 @media (min-width: 1200px) {
   .property-listings__card:hover {
     border-color: $green-6;
+    box-shadow: 0 4px 4px 0 rgba(8, 115, 210, 0.08);
     .property-listings__name {
       color: $green-8;
     }

@@ -1,7 +1,7 @@
 const propertiesPerPage = 6;
 let currentPage = 1;
 let properties = [];
-let searchedProperties = [];
+let filteredProperties = [];
 
 const searchButton = document.querySelector(".search-block__search-btn");
 
@@ -9,13 +9,36 @@ const fetchProperties = async () => {
   try {
     const response = await fetch("http://localhost:8000/properties");
     properties = await response.json();
-    searchedProperties = properties;
-    console.log(searchedProperties);
+    filteredProperties = properties;
 
     renderProperties(currentPage);
   } catch (error) {
     console.error("Error fetching properties:", error);
   }
+};
+
+// Applying Filters
+const applySearch = (searchInput) => {
+  return properties.filter(
+    (property) =>
+      property.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+      property.address.toLowerCase().includes(searchInput.toLowerCase())
+  );
+};
+
+const applySearchAndFilters = () => {
+  const searchInput = document.querySelector(".property__search-input").value;
+
+  // Apply search
+  filteredProperties = applySearch(searchInput);
+
+  // Apply filters
+  // filteredProperties = applyFilters();
+
+  // Reset current page to 1 and render properties and pagination
+  currentPage = 1;
+  renderProperties(currentPage);
+  renderPagination();
 };
 
 // Displaying Properties
@@ -25,7 +48,7 @@ const renderProperties = (page) => {
 
   const startIndex = (page - 1) * propertiesPerPage;
   const endIndex = startIndex + propertiesPerPage;
-  const paginatedProperties = searchedProperties.slice(startIndex, endIndex);
+  const paginatedProperties = filteredProperties.slice(startIndex, endIndex);
 
   paginatedProperties.forEach((property) => {
     // Create a div element  for the property
@@ -166,7 +189,7 @@ const renderPagination = () => {
   const pagination = document.querySelector(".pagination__holder");
   pagination.innerHTML = "";
 
-  const totalPages = Math.ceil(searchedProperties.length / propertiesPerPage);
+  const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
 
   if (totalPages <= 1) {
     return;
@@ -246,17 +269,40 @@ const renderPagination = () => {
 };
 
 // Search Functionality
-const searchProperties = () => {
-  const input = document
-    .querySelector(".property__search-input")
-    .value.toLowerCase();
-  searchedProperties = properties.filter((property) =>
-    property.name.toLowerCase().includes(input)
-  );
+// const searchProperties = () => {
+//   const input = document
+//     .querySelector(".property__search-input")
+//     .value.toLowerCase();
+//   filteredProperties = properties.filter((property) =>
+//     property.name.toLowerCase().includes(input)
+//   );
+//   currentPage = 1;
+//   renderProperties(currentPage);
+//   renderPagination();
+// };
+
+const clearFilters = () => {
+  document
+    .querySelectorAll('.property-filters input[type="checkbox"]')
+    .forEach((checkbox) => (checkbox.checked = false));
+  document
+    .querySelectorAll('.property-filters input[type="number"]')
+    .forEach((input) => (input.value = ""));
+  filteredProperties = properties;
   currentPage = 1;
   renderProperties(currentPage);
-  renderPagination();
 };
-searchButton.addEventListener("click", searchProperties);
+
+const setupEventListeners = () => {
+  document.querySelectorAll(".property-filters input").forEach((input) => {
+    input.addEventListener("change", applySearchAndFilters);
+  });
+
+  document
+    .querySelector(".property-filters__btn")
+    .addEventListener("click", clearFilters);
+};
+
+searchButton.addEventListener("click", applySearchAndFilters);
 // fetch and render properties on page load
-fetchProperties();
+fetchProperties().then(setupEventListeners);

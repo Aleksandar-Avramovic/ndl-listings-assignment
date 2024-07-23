@@ -701,7 +701,6 @@ input[type=number] {
   }
 }
 .property-listings {
-  min-height: 380px;
   margin-left: 11px;
   display: flex;
   justify-content: space-between;
@@ -728,6 +727,9 @@ input[type=number] {
   }
 }
 .property-listings__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 312px;
   background-color: #fff;
   border: 1px solid #d2f4c9;
@@ -742,7 +744,6 @@ input[type=number] {
   display: flex;
   justify-content: center;
   padding: 8px 0;
-  box-shadow: 0 4px 4px 0 rgba(8, 115, 210, 0.08);
 }
 .property-listings__card .card__footer p, .property-listings__card .card__footer .copyright p span a:link, .copyright p span .property-listings__card .card__footer a:link,
 .property-listings__card .card__footer .copyright p span a:visited,
@@ -811,6 +812,7 @@ input[type=number] {
 @media (min-width: 1200px) {
   .property-listings__card:hover {
     border-color: #ace09e;
+    box-shadow: 0 4px 4px 0 rgba(8, 115, 210, 0.08);
   }
   .property-listings__card:hover .property-listings__name {
     color: #6dbc56;
