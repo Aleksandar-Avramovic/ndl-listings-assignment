@@ -10,7 +10,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=1",
       "date": "January 15, 2024",
       "time": "10:00 AM",
-      "price": 750000
+      "price": 750000,
+      "activity": 120
     },
     {
       "name": "Ocean View Apartments",
@@ -22,7 +23,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=2",
       "date": "December 1, 2023",
       "time": "02:00 PM",
-      "price": 1500000
+      "price": 1500000,
+      "activity": 200
     },
     {
       "name": "Skyline Towers",
@@ -34,7 +36,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=3",
       "date": "June 30, 2024",
       "time": "11:00 AM",
-      "price": 500000
+      "price": 500000,
+      "activity": 85
     },
     {
       "name": "Riverfront Estates",
@@ -46,7 +49,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=4",
       "date": "March 20, 2024",
       "time": "03:00 PM",
-      "price": 1200000
+      "price": 1200000,
+      "activity": 150
     },
     {
       "name": "Golden Gate Villas",
@@ -58,7 +62,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=5",
       "date": "November 10, 2023",
       "time": "09:00 AM",
-      "price": 950000
+      "price": 950000,
+      "activity": 75
     },
     {
       "name": "Mountain View Cottages",
@@ -70,7 +75,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=6",
       "date": "August 25, 2024",
       "time": "01:00 PM",
-      "price": 2000000
+      "price": 2000000,
+      "activity": 65
     },
     {
       "name": "Sunset Boulevard Homes",
@@ -82,7 +88,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=7",
       "date": "February 18, 2024",
       "time": "12:00 PM",
-      "price": 850000
+      "price": 850000,
+      "activity": 110
     },
     {
       "name": "Capital City Flats",
@@ -94,7 +101,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=8",
       "date": "October 5, 2023",
       "time": "04:00 PM",
-      "price": 1800000
+      "price": 1800000,
+      "activity": 180
     },
     {
       "name": "Lakeside Villas",
@@ -106,7 +114,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=9",
       "date": "July 15, 2024",
       "time": "02:00 PM",
-      "price": 1300000
+      "price": 1300000,
+      "activity": 90
     },
     {
       "name": "Palm Tree Residences",
@@ -118,7 +127,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=10",
       "date": "January 25, 2024",
       "time": "09:30 AM",
-      "price": 600000
+      "price": 600000,
+      "activity": 130
     },
     {
       "name": "Desert Oasis Apartments",
@@ -130,7 +140,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=11",
       "date": "September 20, 2023",
       "time": "11:30 AM",
-      "price": 1100000
+      "price": 1100000,
+      "activity": 140
     },
     {
       "name": "Coastal Retreat Homes",
@@ -142,7 +153,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=12",
       "date": "May 10, 2024",
       "time": "01:30 PM",
-      "price": 750000
+      "price": 750000,
+      "activity": 95
     },
     {
       "name": "Las Vegas Lofts",
@@ -154,7 +166,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=13",
       "date": "March 1, 2024",
       "time": "04:00 PM",
-      "price": 1900000
+      "price": 1900000,
+      "activity": 175
     },
     {
       "name": "Portland Heights",
@@ -166,7 +179,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=14",
       "date": "December 15, 2023",
       "time": "10:00 AM",
-      "price": 800000
+      "price": 800000,
+      "activity": 85
     },
     {
       "name": "Peachtree Manor",
@@ -178,7 +192,8 @@
       "imageUrl": "https://picsum.photos/300/160?random=15",
       "date": "April 20, 2024",
       "time": "03:30 PM",
-      "price": 1400000
+      "price": 1400000,
+      "activity": 110
     },
     {
       "name": "Beacon Hill Residences",
@@ -190,451 +205,493 @@
       "imageUrl": "https://picsum.photos/300/160?random=16",
       "date": "February 10, 2024",
       "time": "11:00 AM",
-      "price": 1150000
+      "price": 1150000,
+      "activity": 145
     },
     {
-      "name": "Liberty Bell Lofts",
+      "name": "The Plaza",
       "status": "Completed",
-      "address": "600 Chestnut St, Philadelphia PA 19106",
-      "numberOfUnits": 9,
+      "address": "700 W 42nd St, New York NY 10036",
+      "numberOfUnits": 20,
       "type": "Multifamily",
-      "squareFeet": 11000,
+      "squareFeet": 25000,
       "imageUrl": "https://picsum.photos/300/160?random=17",
-      "date": "November 5, 2023",
-      "time": "02:00 PM",
-      "price": 1600000
+      "date": "August 1, 2023",
+      "time": "05:00 PM",
+      "price": 2500000,
+      "activity": 220
     },
     {
-      "name": "Queen City Residences",
+      "name": "Arbor Hill",
       "status": "Upcoming",
-      "address": "500 S Tryon St, Charlotte NC 28202",
+      "address": "450 Elm St, Minneapolis MN 55401",
       "numberOfUnits": 4,
       "type": "1-4 family",
       "squareFeet": 3500,
       "imageUrl": "https://picsum.photos/300/160?random=18",
-      "date": "June 25, 2024",
+      "date": "October 10, 2024",
       "time": "12:30 PM",
-      "price": 900000
+      "price": 700000,
+      "activity": 90
     },
     {
-      "name": "Gateway Apartments",
+      "name": "Shady Grove Apartments",
       "status": "Live",
-      "address": "1000 Clark Ave, St. Louis MO 63102",
-      "numberOfUnits": 11,
-      "type": "Multifamily",
-      "squareFeet": 9500,
-      "imageUrl": "https://picsum.photos/300/160?random=19",
-      "date": "January 12, 2024",
-      "time": "09:00 AM",
-      "price": 1300000
-    },
-    {
-      "name": "Emerald City Estates",
-      "status": "Completed",
-      "address": "400 Olive Way, Seattle WA 98101",
+      "address": "200 E 7th St, Houston TX 77007",
       "numberOfUnits": 6,
-      "type": "1-4 family",
-      "squareFeet": 4800,
-      "imageUrl": "https://picsum.photos/300/160?random=20",
-      "date": "October 30, 2023",
-      "time": "04:30 PM",
-      "price": 850000
-    },
-    {
-      "name": "Grand Central Flats",
-      "status": "Live",
-      "address": "200 Park Ave, New York NY 10166",
-      "numberOfUnits": 20,
       "type": "Multifamily",
-      "squareFeet": 16000,
-      "imageUrl": "https://picsum.photos/300/160?random=21",
-      "date": "April 15, 2024",
+      "squareFeet": 6000,
+      "imageUrl": "https://picsum.photos/300/160?random=19",
+      "date": "March 15, 2024",
       "time": "01:00 PM",
-      "price": 2500000
+      "price": 850000,
+      "activity": 125
     },
     {
-      "name": "Bayfront Estates",
+      "name": "Maplewood Estates",
       "status": "Completed",
-      "address": "700 Broadway, San Francisco CA 94133",
-      "numberOfUnits": 4,
+      "address": "500 Maple St, Indianapolis IN 46201",
+      "numberOfUnits": 3,
       "type": "1-4 family",
-      "squareFeet": 3800,
-      "imageUrl": "https://picsum.photos/300/160?random=22",
-      "date": "March 10, 2024",
-      "time": "10:30 AM",
-      "price": 1100000
+      "squareFeet": 2700,
+      "imageUrl": "https://picsum.photos/300/160?random=20",
+      "date": "November 30, 2023",
+      "time": "09:00 AM",
+      "price": 650000,
+      "activity": 80
     },
     {
-      "name": "Desert Mirage Apartments",
+      "name": "Hillside Apartments",
       "status": "Upcoming",
-      "address": "900 Las Vegas Blvd S, Las Vegas NV 89101",
-      "numberOfUnits": 18,
-      "type": "Multifamily",
-      "squareFeet": 20000,
-      "imageUrl": "https://picsum.photos/300/160?random=23",
-      "date": "July 20, 2024",
-      "time": "03:00 PM",
-      "price": 2700000
-    },
-    {
-      "name": "Riverwalk Residences",
-      "status": "Live",
-      "address": "600 W Chicago Ave, Chicago IL 60654",
+      "address": "1500 Hillside Ave, San Diego CA 92103",
       "numberOfUnits": 7,
-      "type": "1-4 family",
-      "squareFeet": 7200,
-      "imageUrl": "https://picsum.photos/300/160?random=24",
-      "date": "January 5, 2024",
-      "time": "11:00 AM",
-      "price": 1300000
+      "type": "Multifamily",
+      "squareFeet": 9000,
+      "imageUrl": "https://picsum.photos/300/160?random=21",
+      "date": "July 20, 2024",
+      "time": "10:00 AM",
+      "price": 1600000,
+      "activity": 105
     },
     {
-      "name": "Parkside Lofts",
+      "name": "Country Lane Homes",
       "status": "Completed",
-      "address": "1000 S Olive St, Los Angeles CA 90015",
+      "address": "2100 Country Ln, Nashville TN 37201",
       "numberOfUnits": 5,
       "type": "1-4 family",
-      "squareFeet": 5600,
-      "imageUrl": "https://picsum.photos/300/160?random=25",
-      "date": "May 15, 2024",
-      "time": "09:00 AM",
-      "price": 900000
+      "squareFeet": 3500,
+      "imageUrl": "https://picsum.photos/300/160?random=22",
+      "date": "October 25, 2023",
+      "time": "01:00 PM",
+      "price": 900000,
+      "activity": 90
     },
     {
-      "name": "Uptown Residences",
-      "status": "Upcoming",
-      "address": "1500 McKinney St, Houston TX 77010",
-      "numberOfUnits": 9,
+      "name": "Luxury Lofts",
+      "status": "Live",
+      "address": "6000 Luxury Ln, Miami FL 33101",
+      "numberOfUnits": 8,
       "type": "Multifamily",
       "squareFeet": 10000,
-      "imageUrl": "https://picsum.photos/300/160?random=26",
-      "date": "September 5, 2024",
-      "time": "04:00 PM",
-      "price": 1500000
+      "imageUrl": "https://picsum.photos/300/160?random=23",
+      "date": "February 5, 2024",
+      "time": "02:30 PM",
+      "price": 1400000,
+      "activity": 170
     },
     {
-      "name": "Oceanfront Apartments",
+      "name": "Hampton Court",
+      "status": "Upcoming",
+      "address": "1400 Hampton Blvd, Richmond VA 23230",
+      "numberOfUnits": 3,
+      "type": "1-4 family",
+      "squareFeet": 2200,
+      "imageUrl": "https://picsum.photos/300/160?random=24",
+      "date": "August 15, 2024",
+      "time": "11:00 AM",
+      "price": 700000,
+      "activity": 85
+    },
+    {
+      "name": "Downtown Loft Apartments",
+      "status": "Completed",
+      "address": "800 Main St, Dallas TX 75201",
+      "numberOfUnits": 12,
+      "type": "Multifamily",
+      "squareFeet": 13000,
+      "imageUrl": "https://picsum.photos/300/160?random=25",
+      "date": "November 5, 2023",
+      "time": "03:00 PM",
+      "price": 1800000,
+      "activity": 150
+    },
+    {
+      "name": "West End Residences",
       "status": "Live",
-      "address": "2000 Ocean Ave, Miami Beach FL 33139",
-      "numberOfUnits": 10,
+      "address": "2200 West End Ave, Nashville TN 37203",
+      "numberOfUnits": 6,
+      "type": "1-4 family",
+      "squareFeet": 4000,
+      "imageUrl": "https://picsum.photos/300/160?random=26",
+      "date": "April 10, 2024",
+      "time": "10:00 AM",
+      "price": 850000,
+      "activity": 130
+    },
+    {
+      "name": "Midtown Plaza",
+      "status": "Upcoming",
+      "address": "3500 Midtown Blvd, Houston TX 77002",
+      "numberOfUnits": 8,
       "type": "Multifamily",
       "squareFeet": 12000,
       "imageUrl": "https://picsum.photos/300/160?random=27",
-      "date": "June 15, 2024",
-      "time": "12:00 PM",
-      "price": 1700000
+      "date": "June 10, 2024",
+      "time": "01:30 PM",
+      "price": 1500000,
+      "activity": 120
     },
     {
-      "name": "Historic District Lofts",
+      "name": "Eastside Homes",
       "status": "Completed",
-      "address": "300 Peachtree St NE, Atlanta GA 30308",
-      "numberOfUnits": 6,
+      "address": "2700 Eastside Rd, Boston MA 02120",
+      "numberOfUnits": 4,
       "type": "1-4 family",
-      "squareFeet": 4800,
+      "squareFeet": 2800,
       "imageUrl": "https://picsum.photos/300/160?random=28",
-      "date": "November 15, 2023",
-      "time": "02:00 PM",
-      "price": 1000000
+      "date": "August 5, 2023",
+      "time": "12:00 PM",
+      "price": 800000,
+      "activity": 90
     },
     {
-      "name": "Midtown Residences",
-      "status": "Upcoming",
-      "address": "400 W 14th St, New York NY 10014",
-      "numberOfUnits": 8,
+      "name": "City View Towers",
+      "status": "Live",
+      "address": "500 City View Dr, Denver CO 80202",
+      "numberOfUnits": 10,
       "type": "Multifamily",
       "squareFeet": 11000,
       "imageUrl": "https://picsum.photos/300/160?random=29",
-      "date": "February 10, 2024",
-      "time": "03:00 PM",
-      "price": 1400000
-    },
-    {
-      "name": "The Penthouses",
-      "status": "Live",
-      "address": "500 W 42nd St, New York NY 10036",
-      "numberOfUnits": 2,
-      "type": "1-4 family",
-      "squareFeet": 2800,
-      "imageUrl": "https://picsum.photos/300/160?random=30",
-      "date": "March 20, 2024",
-      "time": "11:30 AM",
-      "price": 2100000
-    },
-    {
-      "name": "Pacific Heights Villas",
-      "status": "Completed",
-      "address": "2000 Pacific Ave, San Francisco CA 94115",
-      "numberOfUnits": 4,
-      "type": "1-4 family",
-      "squareFeet": 3800,
-      "imageUrl": "https://picsum.photos/300/160?random=31",
-      "date": "October 10, 2023",
-      "time": "10:00 AM",
-      "price": 1300000
-    },
-    {
-      "name": "Lakeside Residences",
-      "status": "Upcoming",
-      "address": "1500 Lake Shore Dr, Chicago IL 60610",
-      "numberOfUnits": 12,
-      "type": "Multifamily",
-      "squareFeet": 18000,
-      "imageUrl": "https://picsum.photos/300/160?random=32",
-      "date": "August 5, 2024",
-      "time": "01:30 PM",
-      "price": 2200000
-    },
-    {
-      "name": "Sunrise Villas",
-      "status": "Live",
-      "address": "800 E Atlantic Ave, Delray Beach FL 33483",
-      "numberOfUnits": 5,
-      "type": "1-4 family",
-      "squareFeet": 4200,
-      "imageUrl": "https://picsum.photos/300/160?random=33",
-      "date": "January 25, 2024",
-      "time": "09:00 AM",
-      "price": 750000
-    },
-    {
-      "name": "The Heights",
-      "status": "Completed",
-      "address": "200 W 18th St, New York NY 10011",
-      "numberOfUnits": 1,
-      "type": "1-4 family",
-      "squareFeet": 2200,
-      "imageUrl": "https://picsum.photos/300/160?random=34",
-      "date": "November 30, 2023",
+      "date": "January 10, 2024",
       "time": "11:00 AM",
-      "price": 950000
+      "price": 1400000,
+      "activity": 160
     },
     {
-      "name": "Urban Flats",
+      "name": "Beverly Hills Estates",
       "status": "Upcoming",
-      "address": "500 N Michigan Ave, Chicago IL 60611",
-      "numberOfUnits": 14,
-      "type": "Multifamily",
-      "squareFeet": 15000,
-      "imageUrl": "https://picsum.photos/300/160?random=35",
-      "date": "July 20, 2024",
-      "time": "02:00 PM",
-      "price": 2300000
-    },
-    {
-      "name": "Palm Grove Residences",
-      "status": "Live",
-      "address": "1000 Collins Ave, Miami Beach FL 33139",
+      "address": "123 Beverly Dr, Beverly Hills CA 90210",
       "numberOfUnits": 3,
       "type": "1-4 family",
-      "squareFeet": 3600,
-      "imageUrl": "https://picsum.photos/300/160?random=36",
-      "date": "February 5, 2024",
-      "time": "12:00 PM",
-      "price": 1200000
+      "squareFeet": 2600,
+      "imageUrl": "https://picsum.photos/300/160?random=30",
+      "date": "May 30, 2024",
+      "time": "02:00 PM",
+      "price": 850000,
+      "activity": 85
     },
     {
-      "name": "Historic Heights Lofts",
+      "name": "The Grand",
       "status": "Completed",
-      "address": "2000 4th Ave, Seattle WA 98121",
-      "numberOfUnits": 7,
+      "address": "1000 Grand Ave, San Diego CA 92103",
+      "numberOfUnits": 15,
       "type": "Multifamily",
-      "squareFeet": 8000,
-      "imageUrl": "https://picsum.photos/300/160?random=37",
+      "squareFeet": 14000,
+      "imageUrl": "https://picsum.photos/300/160?random=31",
       "date": "December 10, 2023",
       "time": "03:00 PM",
-      "price": 1500000
+      "price": 1700000,
+      "activity": 200
     },
     {
-      "name": "Vista View Apartments",
-      "status": "Upcoming",
-      "address": "3000 S Las Vegas Blvd, Las Vegas NV 89109",
-      "numberOfUnits": 16,
-      "type": "Multifamily",
-      "squareFeet": 22000,
-      "imageUrl": "https://picsum.photos/300/160?random=38",
-      "date": "August 30, 2024",
-      "time": "11:30 AM",
-      "price": 2800000
-    },
-    {
-      "name": "The Pinnacle",
+      "name": "Parkside Residences",
       "status": "Live",
-      "address": "4000 NE 2nd Ave, Miami FL 33137",
-      "numberOfUnits": 2,
-      "type": "1-4 family",
-      "squareFeet": 3200,
-      "imageUrl": "https://picsum.photos/300/160?random=39",
-      "date": "January 15, 2024",
-      "time": "10:30 AM",
-      "price": 850000
-    },
-    {
-      "name": "Harborview Estates",
-      "status": "Completed",
-      "address": "5000 E Bay Dr, Tampa FL 33619",
-      "numberOfUnits": 10,
-      "type": "Multifamily",
-      "squareFeet": 12000,
-      "imageUrl": "https://picsum.photos/300/160?random=40",
-      "date": "October 20, 2023",
-      "time": "01:00 PM",
-      "price": 1600000
-    },
-    {
-      "name": "Skyline Residences",
-      "status": "Upcoming",
-      "address": "6000 N Central Expy, Dallas TX 75206",
-      "numberOfUnits": 8,
-      "type": "1-4 family",
-      "squareFeet": 10000,
-      "imageUrl": "https://picsum.photos/300/160?random=41",
-      "date": "April 25, 2024",
-      "time": "12:30 PM",
-      "price": 1800000
-    },
-    {
-      "name": "The Enclave",
-      "status": "Live",
-      "address": "7000 S Figueroa St, Los Angeles CA 90003",
-      "numberOfUnits": 12,
-      "type": "Multifamily",
-      "squareFeet": 14000,
-      "imageUrl": "https://picsum.photos/300/160?random=42",
-      "date": "June 1, 2024",
-      "time": "02:30 PM",
-      "price": 2400000
-    },
-    {
-      "name": "The Manor",
-      "status": "Completed",
-      "address": "8000 Wilshire Blvd, Beverly Hills CA 90211",
+      "address": "850 Parkside Dr, Seattle WA 98101",
       "numberOfUnits": 4,
       "type": "1-4 family",
-      "squareFeet": 5000,
-      "imageUrl": "https://picsum.photos/300/160?random=43",
-      "date": "March 25, 2024",
-      "time": "10:00 AM",
-      "price": 1200000
+      "squareFeet": 3200,
+      "imageUrl": "https://picsum.photos/300/160?random=32",
+      "date": "April 15, 2024",
+      "time": "09:00 AM",
+      "price": 900000,
+      "activity": 110
     },
     {
-      "name": "The Villa",
+      "name": "Hilltop Estates",
       "status": "Upcoming",
-      "address": "9000 Sunset Blvd, West Hollywood CA 90069",
-      "numberOfUnits": 10,
+      "address": "300 Hilltop Dr, Las Vegas NV 89109",
+      "numberOfUnits": 8,
       "type": "Multifamily",
-      "squareFeet": 14000,
-      "imageUrl": "https://picsum.photos/300/160?random=44",
-      "date": "May 5, 2024",
-      "time": "03:00 PM",
-      "price": 2100000
+      "squareFeet": 10000,
+      "imageUrl": "https://picsum.photos/300/160?random=33",
+      "date": "March 5, 2024",
+      "time": "11:00 AM",
+      "price": 1400000,
+      "activity": 95
     },
     {
-      "name": "The Ridge",
-      "status": "Live",
-      "address": "10000 Santa Monica Blvd, Los Angeles CA 90067",
+      "name": "Riverside Villas",
+      "status": "Completed",
+      "address": "400 Riverside Dr, Chicago IL 60614",
       "numberOfUnits": 2,
       "type": "1-4 family",
-      "squareFeet": 2800,
-      "imageUrl": "https://picsum.photos/300/160?random=45",
-      "date": "July 15, 2024",
+      "squareFeet": 2400,
+      "imageUrl": "https://picsum.photos/300/160?random=34",
+      "date": "August 20, 2023",
+      "time": "02:00 PM",
+      "price": 650000,
+      "activity": 80
+    },
+    {
+      "name": "Westwood Lofts",
+      "status": "Live",
+      "address": "500 Westwood Blvd, Los Angeles CA 90024",
+      "numberOfUnits": 6,
+      "type": "Multifamily",
+      "squareFeet": 9000,
+      "imageUrl": "https://picsum.photos/300/160?random=35",
+      "date": "February 1, 2024",
+      "time": "03:00 PM",
+      "price": 1300000,
+      "activity": 135
+    },
+    {
+      "name": "Cedar Creek Homes",
+      "status": "Upcoming",
+      "address": "1500 Cedar Creek Rd, Charlotte NC 28202",
+      "numberOfUnits": 5,
+      "type": "1-4 family",
+      "squareFeet": 3000,
+      "imageUrl": "https://picsum.photos/300/160?random=36",
+      "date": "September 15, 2024",
+      "time": "12:00 PM",
+      "price": 800000,
+      "activity": 95
+    },
+    {
+      "name": "Victory Plaza",
+      "status": "Completed",
+      "address": "600 Victory Blvd, Philadelphia PA 19102",
+      "numberOfUnits": 18,
+      "type": "Multifamily",
+      "squareFeet": 15000,
+      "imageUrl": "https://picsum.photos/300/160?random=37",
+      "date": "July 25, 2023",
+      "time": "10:00 AM",
+      "price": 2000000,
+      "activity": 190
+    },
+    {
+      "name": "Waterfront Estates",
+      "status": "Live",
+      "address": "2200 Waterfront Dr, Seattle WA 98109",
+      "numberOfUnits": 6,
+      "type": "1-4 family",
+      "squareFeet": 3800,
+      "imageUrl": "https://picsum.photos/300/160?random=38",
+      "date": "May 5, 2024",
+      "time": "02:30 PM",
+      "price": 1050000,
+      "activity": 140
+    },
+    {
+      "name": "Urban Loft Apartments",
+      "status": "Upcoming",
+      "address": "900 Urban St, Denver CO 80203",
+      "numberOfUnits": 10,
+      "type": "Multifamily",
+      "squareFeet": 11000,
+      "imageUrl": "https://picsum.photos/300/160?random=39",
+      "date": "October 15, 2024",
+      "time": "01:00 PM",
+      "price": 1500000,
+      "activity": 110
+    },
+    {
+      "name": "Greenfield Homes",
+      "status": "Completed",
+      "address": "1700 Greenfield Rd, Dallas TX 75206",
+      "numberOfUnits": 3,
+      "type": "1-4 family",
+      "squareFeet": 2600,
+      "imageUrl": "https://picsum.photos/300/160?random=40",
+      "date": "September 1, 2023",
+      "time": "03:00 PM",
+      "price": 720000,
+      "activity": 90
+    },
+    {
+      "name": "Elm Street Residences",
+      "status": "Live",
+      "address": "800 Elm St, Chicago IL 60605",
+      "numberOfUnits": 4,
+      "type": "Multifamily",
+      "squareFeet": 8000,
+      "imageUrl": "https://picsum.photos/300/160?random=41",
+      "date": "March 1, 2024",
       "time": "11:00 AM",
-      "price": 950000
+      "price": 1300000,
+      "activity": 125
+    },
+    {
+      "name": "Rosewood Apartments",
+      "status": "Upcoming",
+      "address": "1500 Rosewood Ave, San Francisco CA 94114",
+      "numberOfUnits": 6,
+      "type": "1-4 family",
+      "squareFeet": 3200,
+      "imageUrl": "https://picsum.photos/300/160?random=42",
+      "date": "July 10, 2024",
+      "time": "12:00 PM",
+      "price": 950000,
+      "activity": 85
+    },
+    {
+      "name": "Sunnydale Villas",
+      "status": "Completed",
+      "address": "2200 Sunnydale Rd, Miami FL 33139",
+      "numberOfUnits": 8,
+      "type": "Multifamily",
+      "squareFeet": 12000,
+      "imageUrl": "https://picsum.photos/300/160?random=43",
+      "date": "November 10, 2023",
+      "time": "02:00 PM",
+      "price": 1400000,
+      "activity": 180
+    },
+    {
+      "name": "Cityscape Homes",
+      "status": "Live",
+      "address": "3000 Cityscape Dr, New York NY 10001",
+      "numberOfUnits": 4,
+      "type": "1-4 family",
+      "squareFeet": 2800,
+      "imageUrl": "https://picsum.photos/300/160?random=44",
+      "date": "January 15, 2024",
+      "time": "03:00 PM",
+      "price": 850000,
+      "activity": 140
+    },
+    {
+      "name": "Metro Towers",
+      "status": "Upcoming",
+      "address": "600 Metro Blvd, Philadelphia PA 19103",
+      "numberOfUnits": 12,
+      "type": "Multifamily",
+      "squareFeet": 15000,
+      "imageUrl": "https://picsum.photos/300/160?random=45",
+      "date": "June 30, 2024",
+      "time": "11:00 AM",
+      "price": 1700000,
+      "activity": 115
+    },
+    {
+      "name": "Creekside Estates",
+      "status": "Completed",
+      "address": "400 Creekside Rd, Austin TX 78701",
+      "numberOfUnits": 3,
+      "type": "1-4 family",
+      "squareFeet": 2400,
+      "imageUrl": "https://picsum.photos/300/160?random=46",
+      "date": "August 25, 2023",
+      "time": "10:00 AM",
+      "price": 700000,
+      "activity": 70
     },
     {
       "name": "The Reserve",
-      "status": "Completed",
-      "address": "11000 Wilshire Blvd, Los Angeles CA 90024",
-      "numberOfUnits": 6,
+      "status": "Live",
+      "address": "500 Reserve Dr, Seattle WA 98109",
+      "numberOfUnits": 7,
       "type": "Multifamily",
-      "squareFeet": 8000,
-      "imageUrl": "https://picsum.photos/300/160?random=46",
-      "date": "October 5, 2023",
-      "time": "01:00 PM",
-      "price": 1500000
-    },
-    {
-      "name": "The Summit",
-      "status": "Upcoming",
-      "address": "12000 Ventura Blvd, Studio City CA 91604",
-      "numberOfUnits": 8,
-      "type": "1-4 family",
       "squareFeet": 10000,
       "imageUrl": "https://picsum.photos/300/160?random=47",
-      "date": "September 15, 2024",
-      "time": "02:30 PM",
-      "price": 1800000
+      "date": "April 10, 2024",
+      "time": "01:30 PM",
+      "price": 1300000,
+      "activity": 160
     },
     {
-      "name": "The Oasis",
-      "status": "Live",
-      "address": "13000 Mulholland Dr, Beverly Hills CA 90210",
-      "numberOfUnits": 10,
-      "type": "Multifamily",
-      "squareFeet": 14000,
-      "imageUrl": "https://picsum.photos/300/160?random=48",
-      "date": "March 1, 2024",
-      "time": "10:00 AM",
-      "price": 2500000
-    },
-    {
-      "name": "The Terrace",
-      "status": "Completed",
-      "address": "14000 Topanga Canyon Blvd, Chatsworth CA 91311",
+      "name": "Woodland Apartments",
+      "status": "Upcoming",
+      "address": "600 Woodland Ave, Portland OR 97209",
       "numberOfUnits": 5,
       "type": "1-4 family",
-      "squareFeet": 6000,
-      "imageUrl": "https://picsum.photos/300/160?random=49",
-      "date": "December 20, 2023",
-      "time": "11:30 AM",
-      "price": 1300000
+      "squareFeet": 2900,
+      "imageUrl": "https://picsum.photos/300/160?random=48",
+      "date": "September 1, 2024",
+      "time": "02:00 PM",
+      "price": 750000,
+      "activity": 85
     },
     {
-      "name": "The Sanctuary",
-      "status": "Upcoming",
-      "address": "15000 Pacific Coast Hwy, Malibu CA 90265",
-      "numberOfUnits": 4,
-      "type": "1-4 family",
-      "squareFeet": 5000,
-      "imageUrl": "https://picsum.photos/300/160?random=50",
-      "date": "June 10, 2024",
-      "time": "01:00 PM",
-      "price": 1900000
-    },
-    {
-      "name": "The Palms",
-      "status": "Live",
-      "address": "16000 Ventura Blvd, Encino CA 91436",
-      "numberOfUnits": 8,
-      "type": "1-4 family",
-      "squareFeet": 9500,
-      "imageUrl": "https://picsum.photos/300/160?random=51",
-      "date": "July 1, 2024",
-      "time": "10:30 AM",
-      "price": 2200000
-    },
-    {
-      "name": "The Horizon",
+      "name": "Metropolitan Residences",
       "status": "Completed",
-      "address": "17000 Magnolia Blvd, Encino CA 91316",
+      "address": "1500 Metropolitan Blvd, Chicago IL 60614",
       "numberOfUnits": 10,
       "type": "Multifamily",
       "squareFeet": 13000,
-      "imageUrl": "https://picsum.photos/300/160?random=52",
-      "date": "April 1, 2024",
-      "time": "02:00 PM",
-      "price": 1600000
+      "imageUrl": "https://picsum.photos/300/160?random=49",
+      "date": "November 15, 2023",
+      "time": "03:00 PM",
+      "price": 1700000,
+      "activity": 190
     },
     {
-      "name": "The View",
-      "status": "Upcoming",
-      "address": "18000 Mulholland Dr, Calabasas CA 91302",
-      "numberOfUnits": 12,
-      "type": "Multifamily",
-      "squareFeet": 15000,
-      "imageUrl": "https://picsum.photos/300/160?random=53",
-      "date": "August 10, 2024",
-      "time": "01:30 PM",
-      "price": 2500000
+      "name": "The Retreat",
+      "status": "Live",
+      "address": "3000 Retreat Rd, Dallas TX 75201",
+      "numberOfUnits": 4,
+      "type": "1-4 family",
+      "squareFeet": 2200,
+      "imageUrl": "https://picsum.photos/300/160?random=50",
+      "date": "June 10, 2024",
+      "time": "12:00 PM",
+      "price": 700000,
+      "activity": 100
+    },
+    {
+      "properties": [
+        {
+          "name": "Greenview Apartments",
+          "status": "Live",
+          "address": "2500 Greenview Ln, Atlanta GA 30303",
+          "numberOfUnits": 8,
+          "type": "Multifamily",
+          "squareFeet": 9500,
+          "imageUrl": "https://picsum.photos/300/160?random=51",
+          "date": "March 15, 2024",
+          "time": "01:00 PM",
+          "price": 1250000,
+          "activity": 130
+        },
+        {
+          "name": "Lakeside Villas",
+          "status": "Upcoming",
+          "address": "3500 Lakeside Dr, Orlando FL 32801",
+          "numberOfUnits": 7,
+          "type": "1-4 family",
+          "squareFeet": 2800,
+          "imageUrl": "https://picsum.photos/300/160?random=52",
+          "date": "December 1, 2024",
+          "time": "10:00 AM",
+          "price": 780000,
+          "activity": 90
+        },
+        {
+          "name": "Horizon Towers",
+          "status": "Completed",
+          "address": "4700 Horizon Blvd, San Diego CA 92101",
+          "numberOfUnits": 15,
+          "type": "Multifamily",
+          "squareFeet": 18000,
+          "imageUrl": "https://picsum.photos/300/160?random=53",
+          "date": "October 5, 2023",
+          "time": "02:00 PM",
+          "price": 2200000,
+          "activity": 200
+        }
+      ]
     }
   ]
 }

@@ -1,11 +1,16 @@
 const propertiesPerPage = 6;
 let currentPage = 1;
 let properties = [];
+let searchedProperties = [];
+
+const searchButton = document.querySelector(".search-block__search-btn");
 
 const fetchProperties = async () => {
   try {
     const response = await fetch("http://localhost:8000/properties");
     properties = await response.json();
+    searchedProperties = properties;
+    console.log(searchedProperties);
 
     renderProperties(currentPage);
   } catch (error) {
@@ -13,13 +18,14 @@ const fetchProperties = async () => {
   }
 };
 
+// Displaying Properties
 const renderProperties = (page) => {
   const propertyListings = document.querySelector(".property-cards");
   propertyListings.innerHTML = "";
 
   const startIndex = (page - 1) * propertiesPerPage;
   const endIndex = startIndex + propertiesPerPage;
-  const paginatedProperties = properties.slice(startIndex, endIndex);
+  const paginatedProperties = searchedProperties.slice(startIndex, endIndex);
 
   paginatedProperties.forEach((property) => {
     // Create a div element  for the property
@@ -151,6 +157,7 @@ const renderProperties = (page) => {
   renderPagination();
 };
 
+// Displaying Pagination
 const renderPagination = () => {
   const svgHTML = `<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M1 1.5L6 6.5L11 1.5" stroke="#133051" stroke-width="1.5" stroke-linecap="round"
@@ -159,7 +166,11 @@ const renderPagination = () => {
   const pagination = document.querySelector(".pagination__holder");
   pagination.innerHTML = "";
 
-  const totalPages = Math.ceil(properties.length / propertiesPerPage);
+  const totalPages = Math.ceil(searchedProperties.length / propertiesPerPage);
+
+  if (totalPages <= 1) {
+    return;
+  }
 
   const prevButton = document.createElement("button");
   prevButton.classList.add("pagination-prev");
@@ -233,5 +244,19 @@ const renderPagination = () => {
   });
   pagination.appendChild(nextButton);
 };
+
+// Search Functionality
+const searchProperties = () => {
+  const input = document
+    .querySelector(".property__search-input")
+    .value.toLowerCase();
+  searchedProperties = properties.filter((property) =>
+    property.name.toLowerCase().includes(input)
+  );
+  currentPage = 1;
+  renderProperties(currentPage);
+  renderPagination();
+};
+searchButton.addEventListener("click", searchProperties);
 // fetch and render properties on page load
 fetchProperties();
