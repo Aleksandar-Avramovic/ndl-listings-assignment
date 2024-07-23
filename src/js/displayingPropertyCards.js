@@ -18,7 +18,9 @@ const fetchProperties = async () => {
 };
 
 // Applying Filters
-const applySearch = (searchInput, filteredProperties) => {
+const applySearch = () => {
+  const searchInput = document.querySelector(".property__search-input").value;
+  filteredProperties = properties;
   filteredProperties = filteredProperties.filter(
     (filteredProperty) =>
       filteredProperty.name.toLowerCase().includes(searchInput.toLowerCase()) ||
@@ -30,34 +32,46 @@ const applySearch = (searchInput, filteredProperties) => {
 };
 
 const applyFilters = () => {
-  console.log("HI");
+  filteredProperties = properties;
+  const multifamily = document.getElementById("multifamily");
+  const family = document.getElementById("family");
+  if (multifamily.checked === true) {
+    filteredProperties = properties.filter(
+      (property) => property.type === "Multifamily"
+    );
+    renderProperties(currentPage);
+    renderPagination();
+  }
+
+  if (family.checked === true) {
+    filteredProperties = properties.filter(
+      (property) => property.type === "1-4 family"
+    );
+    renderProperties(currentPage);
+    renderPagination();
+  }
+
+  if (multifamily.checked && family.checked) {
+    filteredProperties = properties;
+    renderProperties(currentPage);
+    renderPagination();
+  }
+
+  let minSquareFeet = document.getElementById("minSquareFeet").value;
+  let maxSquareFeet = document.getElementById("maxSquareFeet").value;
+  if ((minSquareFeet = maxSquareFeet !== "" && minSquareFeet < maxSquareFeet)) {
+    filteredProperties = properties.filter(
+      (property) =>
+        property.squareFeet >= minSquareFeet &&
+        property.squareFeet <= maxSquareFeet
+    );
+    renderProperties(currentPage);
+    renderPagination();
+  }
+
+  renderProperties(currentPage);
+  renderPagination();
 };
-// const filterProperties = () => {
-//   const checkboxes = document.querySelectorAll(".input-checkbox input");
-
-//   const selectedFilters = Array.from(checkboxes)
-//     .slice(0, 2)
-//     .filter((checkbox) => checkbox.checked);
-
-//   if (selectedFilters.length > 0) {
-//     filteredProperties = properties.filter();
-//   }
-
-//   renderProperties(currentPage);
-//   renderPagination();
-// };
-
-// const applySearchAndFilters = () => {
-//   const searchInput = document.querySelector(".property__search-input").value;
-
-//   // Apply search
-//   filteredProperties = applySearch(searchInput, properties);
-
-//   // Apply filters
-//   // filteredProperties = applyFilters();
-
-//   // Reset current page to 1 and render properties and pagination
-// };
 
 // Displaying Properties
 const renderProperties = (page) => {
@@ -315,5 +329,6 @@ const setupEventListeners = () => {
 };
 
 searchButton.addEventListener("click", applySearch);
+
 // fetch and render properties on page load
 fetchProperties().then(setupEventListeners);
