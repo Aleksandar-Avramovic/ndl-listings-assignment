@@ -18,28 +18,46 @@ const fetchProperties = async () => {
 };
 
 // Applying Filters
-const applySearch = (searchInput) => {
-  return properties.filter(
-    (property) =>
-      property.name.toLowerCase().includes(searchInput.toLowerCase()) ||
-      property.address.toLowerCase().includes(searchInput.toLowerCase())
+const applySearch = (searchInput, filteredProperties) => {
+  filteredProperties = filteredProperties.filter(
+    (filteredProperty) =>
+      filteredProperty.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+      filteredProperty.address.toLowerCase().includes(searchInput.toLowerCase())
   );
-};
-
-const applySearchAndFilters = () => {
-  const searchInput = document.querySelector(".property__search-input").value;
-
-  // Apply search
-  filteredProperties = applySearch(searchInput);
-
-  // Apply filters
-  // filteredProperties = applyFilters();
-
-  // Reset current page to 1 and render properties and pagination
   currentPage = 1;
   renderProperties(currentPage);
   renderPagination();
 };
+
+const applyFilters = () => {
+  console.log("HI");
+};
+// const filterProperties = () => {
+//   const checkboxes = document.querySelectorAll(".input-checkbox input");
+
+//   const selectedFilters = Array.from(checkboxes)
+//     .slice(0, 2)
+//     .filter((checkbox) => checkbox.checked);
+
+//   if (selectedFilters.length > 0) {
+//     filteredProperties = properties.filter();
+//   }
+
+//   renderProperties(currentPage);
+//   renderPagination();
+// };
+
+// const applySearchAndFilters = () => {
+//   const searchInput = document.querySelector(".property__search-input").value;
+
+//   // Apply search
+//   filteredProperties = applySearch(searchInput, properties);
+
+//   // Apply filters
+//   // filteredProperties = applyFilters();
+
+//   // Reset current page to 1 and render properties and pagination
+// };
 
 // Displaying Properties
 const renderProperties = (page) => {
@@ -268,26 +286,19 @@ const renderPagination = () => {
   pagination.appendChild(nextButton);
 };
 
-// Search Functionality
-// const searchProperties = () => {
-//   const input = document
-//     .querySelector(".property__search-input")
-//     .value.toLowerCase();
-//   filteredProperties = properties.filter((property) =>
-//     property.name.toLowerCase().includes(input)
-//   );
-//   currentPage = 1;
-//   renderProperties(currentPage);
-//   renderPagination();
-// };
-
 const clearFilters = () => {
   document
     .querySelectorAll('.property-filters input[type="checkbox"]')
     .forEach((checkbox) => (checkbox.checked = false));
   document
     .querySelectorAll('.property-filters input[type="number"]')
-    .forEach((input) => (input.value = ""));
+    .forEach((input) => {
+      input.value = "";
+      input.classList.remove("error");
+    });
+  document
+    .querySelectorAll(".error-notification")
+    .forEach((errorMsg) => errorMsg.classList.remove("visible"));
   filteredProperties = properties;
   currentPage = 1;
   renderProperties(currentPage);
@@ -295,7 +306,7 @@ const clearFilters = () => {
 
 const setupEventListeners = () => {
   document.querySelectorAll(".property-filters input").forEach((input) => {
-    input.addEventListener("change", applySearchAndFilters);
+    input.addEventListener("change", applyFilters);
   });
 
   document
@@ -303,6 +314,6 @@ const setupEventListeners = () => {
     .addEventListener("click", clearFilters);
 };
 
-searchButton.addEventListener("click", applySearchAndFilters);
+searchButton.addEventListener("click", applySearch);
 // fetch and render properties on page load
 fetchProperties().then(setupEventListeners);
