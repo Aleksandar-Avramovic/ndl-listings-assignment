@@ -2,6 +2,7 @@ const propertiesPerPage = 6;
 let currentPage = 1;
 let properties = [];
 let filteredProperties = [];
+let searchedProperties = [];
 
 const searchButton = document.querySelector(".search-block__search-btn");
 
@@ -9,26 +10,120 @@ const fetchProperties = async () => {
   try {
     const response = await fetch("http://localhost:8000/properties");
     properties = await response.json();
-    filteredProperties = properties;
+    filteredProperties = searchedProperties = properties;
 
-    renderProperties(currentPage);
+    renderProperties(currentPage, properties);
   } catch (error) {
     console.error("Error fetching properties:", error);
   }
 };
 
-// Applying Filters
-const applySearch = () => {
-  const searchInput = document.querySelector(".property__search-input").value;
-  filteredProperties = properties;
-  filteredProperties = filteredProperties.filter(
-    (filteredProperty) =>
-      filteredProperty.name.toLowerCase().includes(searchInput.toLowerCase()) ||
-      filteredProperty.address.toLowerCase().includes(searchInput.toLowerCase())
-  );
+// Getting date from two months ago
+const getFormattedDateTwoMonthsAgo = () => {
+  const today = new Date();
+  const twoMonthsAgo = new Date(today);
+  twoMonthsAgo.setMonth(today.getMonth() - 2);
+
+  // Format the date as "Month Day, Year"
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return twoMonthsAgo.toLocaleDateString("en-US", options);
+};
+
+// Sort Handler
+const sortHandler = (properties) => {
+  let sortedProperties = properties.slice();
+
   currentPage = 1;
-  renderProperties(currentPage);
-  renderPagination();
+  const today = new Date();
+
+  const option = document.querySelector(
+    ".filter-sorting__btn span"
+  ).textContent;
+
+  switch (option) {
+    case "default sorting":
+      renderProperties(currentPage, sortedProperties);
+      break;
+    case "oldest":
+      sortedProperties = properties.slice().sort((a, b) => {
+        const dateFirst = new Date(`${a.date} ${a.time}`);
+        const dateSecond = new Date(`${b.date} ${b.time}`);
+
+        return dateFirst - dateSecond;
+      });
+
+      renderProperties(currentPage, sortedProperties);
+
+      break;
+    case "low to high":
+      sortedProperties = properties.slice().sort((a, b) => a.price - b.price);
+      renderProperties(currentPage, sortedProperties);
+      break;
+    case "high to low":
+      sortedProperties = properties.slice().sort((a, b) => b.price - a.price);
+      renderProperties(currentPage, sortedProperties);
+      break;
+    case "ending soonest":
+      sortedProperties = properties
+        .slice()
+        .filter((property) => property.status === "Live")
+        .filter((property) => {
+          const propertyDate = new Date(`${property.date} ${property.time}`);
+          return propertyDate >= today;
+        })
+        .sort((a, b) => {
+          const dateFirst = new Date(`${a.date} ${a.time}`);
+          const dateSecond = new Date(`${b.date} ${b.time}`);
+          return dateFirst - dateSecond;
+        });
+      renderProperties(currentPage, sortedProperties);
+      break;
+    case "recently started":
+      const formattedTwoMonthsAgo = getFormattedDateTwoMonthsAgo();
+
+      sortedProperties = properties
+        .slice()
+        .filter((property) => property.status === "Live")
+        .filter((property) => {
+          const propertyDate = new Date(`${property.date}`);
+
+          const propertyEndDate = new Date(`${property.endDate}`);
+
+          const twoMonthsAgoDate = new Date(formattedTwoMonthsAgo);
+
+          return propertyDate > twoMonthsAgoDate && propertyEndDate >= today;
+        })
+        .sort((a, b) => {
+          const dateFirst = new Date(`${a.date} ${a.time}`);
+          const dateSecond = new Date(`${b.date} ${b.time}`);
+          return dateFirst - dateSecond;
+        });
+      renderProperties(currentPage, sortedProperties);
+      break;
+    case "most active":
+      sortedProperties = properties
+        .slice()
+        .sort((a, b) => b.activity - a.activity);
+      renderProperties(currentPage, sortedProperties);
+      break;
+    default:
+      sortedProperties = properties.slice();
+      renderProperties(currentPage, sortedProperties);
+  }
+};
+
+// Applying Filters
+const applySearch = (properties) => {
+  const searchInput = document.querySelector(".property__search-input").value;
+  searchedProperties = properties.filter(
+    (property) =>
+      property.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+      property.address.toLowerCase().includes(searchInput.toLowerCase())
+  );
+
+  currentPage = 1;
+  renderProperties(currentPage, searchedProperties);
+  // renderPagination();
 };
 
 const applyFilters = () => {
@@ -57,14 +152,17 @@ const applyFilters = () => {
     renderPagination();
   }
 
-  let minSquareFeet = document.getElementById("minSquareFeet").value;
-  let maxSquareFeet = document.getElementById("maxSquareFeet").value;
+  let minSquareFeet = parseInt(document.getElementById("minSquareFeet").value);
+
+  let maxSquareFeet = parseInt(document.getElementById("maxSquareFeet").value);
+
   if ((minSquareFeet = maxSquareFeet !== "" && minSquareFeet < maxSquareFeet)) {
     filteredProperties = properties.filter(
       (property) =>
         property.squareFeet >= minSquareFeet &&
         property.squareFeet <= maxSquareFeet
     );
+
     renderProperties(currentPage);
     renderPagination();
   }
@@ -74,13 +172,14 @@ const applyFilters = () => {
 };
 
 // Displaying Properties
-const renderProperties = (page) => {
+const renderProperties = (page, data) => {
   const propertyListings = document.querySelector(".property-cards");
   propertyListings.innerHTML = "";
 
   const startIndex = (page - 1) * propertiesPerPage;
   const endIndex = startIndex + propertiesPerPage;
-  const paginatedProperties = filteredProperties.slice(startIndex, endIndex);
+
+  const paginatedProperties = data.slice(startIndex, endIndex);
 
   paginatedProperties.forEach((property) => {
     // Create a div element  for the property
@@ -209,11 +308,11 @@ const renderProperties = (page) => {
   // const paginationHolder = document.createElement("div");
   // paginationHolder.classList.add("pagination__holder");
 
-  renderPagination();
+  renderPagination(data);
 };
 
 // Displaying Pagination
-const renderPagination = () => {
+const renderPagination = (properties) => {
   const svgHTML = `<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M1 1.5L6 6.5L11 1.5" stroke="#133051" stroke-width="1.5" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -221,7 +320,7 @@ const renderPagination = () => {
   const pagination = document.querySelector(".pagination__holder");
   pagination.innerHTML = "";
 
-  const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
+  const totalPages = Math.ceil(properties.length / propertiesPerPage);
 
   if (totalPages <= 1) {
     return;
@@ -234,8 +333,7 @@ const renderPagination = () => {
   prevButton.addEventListener("click", () => {
     if (currentPage > 1) {
       currentPage--;
-      renderProperties(currentPage);
-      renderPagination();
+      renderProperties(currentPage, properties);
     }
   });
   pagination.appendChild(prevButton);
@@ -262,8 +360,7 @@ const renderPagination = () => {
     prevPageButton.classList.add("pagination-button");
     prevPageButton.addEventListener("click", () => {
       currentPage = prevPage;
-      renderProperties(currentPage);
-      renderPagination();
+      renderProperties(currentPage, properties);
     });
     pagination.appendChild(prevPageButton);
   }
@@ -280,8 +377,7 @@ const renderPagination = () => {
     nextPageButton.classList.add("pagination-button");
     nextPageButton.onclick = () => {
       currentPage = nextPage;
-      renderProperties(currentPage);
-      renderPagination();
+      renderProperties(currentPage, properties);
     };
     pagination.appendChild(nextPageButton);
   }
@@ -293,8 +389,7 @@ const renderPagination = () => {
   nextButton.addEventListener("click", () => {
     if (currentPage < totalPages) {
       currentPage++;
-      renderProperties(currentPage);
-      renderPagination();
+      renderProperties(currentPage, properties);
     }
   });
   pagination.appendChild(nextButton);
@@ -326,9 +421,13 @@ const setupEventListeners = () => {
   document
     .querySelector(".property-filters__btn")
     .addEventListener("click", clearFilters);
+
+  document.querySelectorAll(".filter-sorting__list li").forEach((item) => {
+    item.addEventListener("click", () => sortHandler(properties));
+  });
 };
 
-searchButton.addEventListener("click", applySearch);
+searchButton.addEventListener("click", () => applySearch(properties));
 
 // fetch and render properties on page load
 fetchProperties().then(setupEventListeners);
