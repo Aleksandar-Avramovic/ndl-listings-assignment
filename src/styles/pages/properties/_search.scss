@@ -9,6 +9,12 @@
   @media (max-width: 1200px) {
     padding-top: 100px;
   }
+  @media (max-width: 992px) {
+    padding-bottom: 40px;
+  }
+  @media (max-width: 768px) {
+    padding-bottom: 20px;
+  }
 }
 
 .search-block__title {
