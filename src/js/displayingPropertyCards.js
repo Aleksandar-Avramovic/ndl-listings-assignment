@@ -12,7 +12,7 @@ const fetchProperties = async () => {
     properties = await response.json();
     filteredProperties = searchedProperties = properties;
 
-    renderProperties(currentPage, properties);
+    applyAllFilters();
   } catch (error) {
     console.error("Error fetching properties:", error);
   }
@@ -33,7 +33,7 @@ const getFormattedDateTwoMonthsAgo = () => {
 const sortHandler = (properties) => {
   let sortedProperties = properties.slice();
 
-  currentPage = 1;
+  // currentPage = 1;
   const today = new Date();
 
   const option = document.querySelector(
@@ -42,88 +42,60 @@ const sortHandler = (properties) => {
 
   switch (option) {
     case "default sorting":
-      renderProperties(currentPage, sortedProperties);
-      break;
+      return sortedProperties;
     case "oldest":
-      sortedProperties = properties.slice().sort((a, b) => {
-        const dateFirst = new Date(`${a.date} ${a.time}`);
-        const dateSecond = new Date(`${b.date} ${b.time}`);
+      return sortedProperties.sort(
+        (a, b) =>
+          new Date(`${a.date} ${a.time}`) - new Date(`${b.date} ${b.time}`)
+      );
 
-        return dateFirst - dateSecond;
-      });
-
-      renderProperties(currentPage, sortedProperties);
-
-      break;
     case "low to high":
-      sortedProperties = properties.slice().sort((a, b) => a.price - b.price);
-      renderProperties(currentPage, sortedProperties);
-      break;
+      return sortedProperties.sort((a, b) => a.price - b.price);
+
     case "high to low":
-      sortedProperties = properties.slice().sort((a, b) => b.price - a.price);
-      renderProperties(currentPage, sortedProperties);
-      break;
+      return sortedProperties.sort((a, b) => b.price - a.price);
+
     case "ending soonest":
-      sortedProperties = properties
-        .slice()
+      return sortedProperties
         .filter((property) => property.status === "Live")
-        .filter((property) => {
-          const propertyDate = new Date(`${property.date} ${property.time}`);
-          return propertyDate >= today;
-        })
-        .sort((a, b) => {
-          const dateFirst = new Date(`${a.date} ${a.time}`);
-          const dateSecond = new Date(`${b.date} ${b.time}`);
-          return dateFirst - dateSecond;
-        });
-      renderProperties(currentPage, sortedProperties);
-      break;
+        .filter(
+          (property) => new Date(`${property.date} ${property.time}`) >= today
+        )
+        .sort(
+          (a, b) =>
+            new Date(`${a.date} ${a.time}`) - new Date(`${b.date} ${b.time}`)
+        );
     case "recently started":
       const formattedTwoMonthsAgo = getFormattedDateTwoMonthsAgo();
-
-      sortedProperties = properties
-        .slice()
+      return sortedProperties
         .filter((property) => property.status === "Live")
         .filter((property) => {
           const propertyDate = new Date(`${property.date}`);
-
           const propertyEndDate = new Date(`${property.endDate}`);
-
           const twoMonthsAgoDate = new Date(formattedTwoMonthsAgo);
-
           return propertyDate > twoMonthsAgoDate && propertyEndDate >= today;
         })
-        .sort((a, b) => {
-          const dateFirst = new Date(`${a.date} ${a.time}`);
-          const dateSecond = new Date(`${b.date} ${b.time}`);
-          return dateFirst - dateSecond;
-        });
-      renderProperties(currentPage, sortedProperties);
-      break;
+        .sort(
+          (a, b) =>
+            new Date(`${a.date} ${a.time}`) - new Date(`${b.date} ${b.time}`)
+        );
     case "most active":
-      sortedProperties = properties
-        .slice()
-        .sort((a, b) => b.activity - a.activity);
-      renderProperties(currentPage, sortedProperties);
-      break;
+      return sortedProperties.sort((a, b) => b.activity - a.activity);
     default:
-      sortedProperties = properties.slice();
-      renderProperties(currentPage, sortedProperties);
+      return sortedProperties;
   }
 };
 
 // Applying Filters
 const applySearch = (properties) => {
-  const searchInput = document.querySelector(".property__search-input").value;
-  searchedProperties = properties.filter(
+  const searchInput = document
+    .querySelector(".property__search-input")
+    .value.toLowerCase();
+  return properties.filter(
     (property) =>
-      property.name.toLowerCase().includes(searchInput.toLowerCase()) ||
-      property.address.toLowerCase().includes(searchInput.toLowerCase())
+      property.name.toLowerCase().includes(searchInput) ||
+      property.address.toLowerCase().includes(searchInput)
   );
-
-  currentPage = 1;
-  renderProperties(currentPage, searchedProperties);
-  // renderPagination();
 };
 
 const applyFilters = () => {
@@ -169,6 +141,14 @@ const applyFilters = () => {
 
   renderProperties(currentPage);
   renderPagination();
+};
+
+const applyAllFilters = () => {
+  currentPage = 1;
+  let processedProperties = applySearch(properties);
+  // processedProperties = applyFilters(processedProperties);
+  processedProperties = sortHandler(processedProperties);
+  renderProperties(currentPage, processedProperties);
 };
 
 // Displaying Properties
@@ -424,11 +404,11 @@ const setupEventListeners = () => {
     .addEventListener("click", clearFilters);
 
   document.querySelectorAll(".filter-sorting__list li").forEach((item) => {
-    item.addEventListener("click", () => sortHandler(properties));
+    item.addEventListener("click", applyAllFilters);
   });
 };
 
-searchButton.addEventListener("click", () => applySearch(properties));
+searchButton.addEventListener("click", applyAllFilters);
 
 // fetch and render properties on page load
 fetchProperties().then(setupEventListeners);
