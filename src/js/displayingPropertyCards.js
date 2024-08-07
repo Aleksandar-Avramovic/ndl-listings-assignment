@@ -185,6 +185,7 @@ const renderProperties = (page, data) => {
     // Create a div element  for the property
     const propertyCard = document.createElement("div");
     propertyCard.classList.add("property-listings__card");
+    propertyCard.classList.add("grid");
 
     const handleDate = (status) => {
       if (status === "Live") {

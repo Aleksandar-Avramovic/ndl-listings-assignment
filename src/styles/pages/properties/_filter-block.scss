@@ -1,6 +1,15 @@
 .property-listing__wrap {
   display: flex;
   margin-right: -24px;
+  margin-bottom: 160px;
+  @media (max-width: 1400px) {
+    margin-right: 0;
+    gap: 5px;
+    @media (max-width: 1200px) {
+      margin-bottom: 80px;
+      gap: 20px;
+    }
+  }
 }
 
 .property-filters {
@@ -13,11 +22,17 @@
   border: 1px solid $green-3;
   border-radius: 4px;
   box-shadow: 0 0 24px 0 rgba(38, 65, 31, 0.12);
+  @media (max-width: 1400px) {
+    margin-left: 0;
+  }
 }
 
 .property-filters__wrap {
   padding-top: 23px;
   padding-right: 13px;
+  @media (max-width: 1400px) {
+    padding: 20px 0 0;
+  }
 }
 
 .property-filters__title {
@@ -187,6 +202,12 @@
     color: $gray-12;
     max-width: 124.5px;
     transition: all 0.35s ease;
+    @media (max-width: 1400px) {
+      max-width: 112.5px;
+    }
+    @media (max-width: 1200px) {
+      max-width: 91.5px;
+    }
     &::placeholder {
       color: $gray-8;
     }

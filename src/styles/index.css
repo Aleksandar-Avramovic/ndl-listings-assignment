@@ -730,7 +730,7 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 312px;
+  max-width: 312px;
   background-color: #fff;
   border: 1px solid #d2f4c9;
   border-radius: 8px 8px 0 0;
@@ -805,7 +805,21 @@ input[type=number] {
   .copyright p span .property-listings__card .card__footer--upcoming a:visited, .property-listings__card .card__footer--completed p, .property-listings__card .card__footer--completed .copyright p span a:link, .copyright p span .property-listings__card .card__footer--completed a:link,
   .property-listings__card .card__footer--completed .copyright p span a:visited,
   .copyright p span .property-listings__card .card__footer--completed a:visited {
-    font-size: 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .property-listings__card.grid {
+    margin: 0 5px;
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 1200px) {
+  .property-listings__card.grid {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
   }
 }
 
@@ -888,7 +902,7 @@ input[type=number] {
 
 @media (max-width: 1400px) {
   .property-listings__name {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 .property-listings__address, .property-listings__date span {
@@ -901,7 +915,7 @@ input[type=number] {
 
 @media (max-width: 1400px) {
   .property-listings__address, .property-listings__date span {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 .property-listings__info {
@@ -958,12 +972,12 @@ input[type=number] {
 
 @media (max-width: 1400px) {
   .property-listings__date span {
-    font-size: 12px;
+    font-size: 13px;
   }
   .property-listings__date p, .property-listings__date .copyright p span a:link, .copyright p span .property-listings__date a:link,
   .property-listings__date .copyright p span a:visited,
   .copyright p span .property-listings__date a:visited {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 .info-card {
@@ -1948,6 +1962,19 @@ input[type=number] {
 .property-listing__wrap {
   display: flex;
   margin-right: -24px;
+  margin-bottom: 160px;
+}
+@media (max-width: 1400px) {
+  .property-listing__wrap {
+    margin-right: 0;
+    gap: 5px;
+  }
+}
+@media (max-width: 1400px) and (max-width: 1200px) {
+  .property-listing__wrap {
+    margin-bottom: 80px;
+    gap: 20px;
+  }
 }
 
 .property-filters {
@@ -1962,10 +1989,20 @@ input[type=number] {
   border-radius: 4px;
   box-shadow: 0 0 24px 0 rgba(38, 65, 31, 0.12);
 }
+@media (max-width: 1400px) {
+  .property-filters {
+    margin-left: 0;
+  }
+}
 
 .property-filters__wrap {
   padding-top: 23px;
   padding-right: 13px;
+}
+@media (max-width: 1400px) {
+  .property-filters__wrap {
+    padding: 20px 0 0;
+  }
 }
 
 .property-filters__title {
@@ -2122,6 +2159,16 @@ input[type=number] {
   max-width: 124.5px;
   transition: all 0.35s ease;
 }
+@media (max-width: 1400px) {
+  .input-range input {
+    max-width: 112.5px;
+  }
+}
+@media (max-width: 1200px) {
+  .input-range input {
+    max-width: 91.5px;
+  }
+}
 .input-range input::-moz-placeholder {
   color: #b9bbc6;
 }
@@ -2195,6 +2242,11 @@ input[type=number] {
 .property-listing-block {
   width: 75%;
   padding-inline: 15px;
+}
+@media (max-width: 1400px) {
+  .property-listing-block {
+    padding-inline: 0;
+  }
 }
 
 .property-listing-block__top {
@@ -2314,11 +2366,29 @@ input[type=number] {
   gap: 20px;
   min-height: 780px;
 }
+@media (max-width: 1400px) {
+  .property-cards {
+    gap: 0;
+    grid-template-columns: repeat(3, 278px);
+  }
+}
+@media (max-width: 1200px) {
+  .property-cards {
+    grid-template-columns: repeat(2, 49%);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
 
 .pagination__holder {
   display: flex;
   justify-content: flex-end;
   margin: 40px auto 20px;
+}
+@media (max-width: 1400px) {
+  .pagination__holder {
+    margin: 15px auto;
+  }
 }
 
 .pagination-button, .pagination-prev,

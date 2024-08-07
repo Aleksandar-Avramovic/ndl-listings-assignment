@@ -4,12 +4,25 @@
   grid-template-rows: repeat(2, 1fr);
   gap: 20px;
   min-height: 780px;
+
+  @media (max-width: 1400px) {
+    gap: 0;
+    grid-template-columns: repeat(3, 278px);
+  }
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 49%);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+  }
 }
 
 .pagination__holder {
   display: flex;
   justify-content: flex-end;
   margin: 40px auto 20px;
+  @media (max-width: 1400px) {
+    margin: 15px auto;
+  }
 }
 
 .pagination-button {
