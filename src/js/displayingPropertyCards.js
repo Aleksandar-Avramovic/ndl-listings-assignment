@@ -31,6 +31,7 @@ const getFormattedDateTwoMonthsAgo = () => {
 
 // Sort Handler
 const sortHandler = (properties) => {
+  console.log(properties);
   let sortedProperties = properties.slice();
 
   // currentPage = 1;
@@ -98,56 +99,51 @@ const applySearch = (properties) => {
   );
 };
 
-const applyFilters = () => {
-  filteredProperties = properties;
+const applyFilters = (properties) => {
+  console.log(properties);
+  let filteredProperties = properties;
   const multifamily = document.getElementById("multifamily");
   const family = document.getElementById("family");
-  if (multifamily.checked === true) {
+  if (multifamily.checked) {
     filteredProperties = properties.filter(
       (property) => property.type === "Multifamily"
     );
-    renderProperties(currentPage);
-    renderPagination();
   }
 
-  if (family.checked === true) {
+  if (family.checked) {
     filteredProperties = properties.filter(
       (property) => property.type === "1-4 family"
     );
-    renderProperties(currentPage);
-    renderPagination();
   }
 
   if (multifamily.checked && family.checked) {
     filteredProperties = properties;
-    renderProperties(currentPage);
-    renderPagination();
   }
 
   let minSquareFeet = parseInt(document.getElementById("minSquareFeet").value);
+  console.log(minSquareFeet);
 
   let maxSquareFeet = parseInt(document.getElementById("maxSquareFeet").value);
-
-  if ((minSquareFeet = maxSquareFeet !== "" && minSquareFeet < maxSquareFeet)) {
-    filteredProperties = properties.filter(
-      (property) =>
-        property.squareFeet >= minSquareFeet &&
-        property.squareFeet <= maxSquareFeet
-    );
-
-    renderProperties(currentPage);
-    renderPagination();
+  console.log(maxSquareFeet);
+  if (minSquareFeet < maxSquareFeet) {
+    filteredProperties = properties
+      .filter((property) => property.squareFeet >= minSquareFeet)
+      .filter((property) => property.squareFeet <= maxSquareFeet);
+    console.log(filteredProperties);
   }
 
-  renderProperties(currentPage);
-  renderPagination();
+  return filteredProperties;
 };
 
 const applyAllFilters = () => {
   currentPage = 1;
+
   let processedProperties = applySearch(properties);
-  // processedProperties = applyFilters(processedProperties);
+
+  processedProperties = applyFilters(processedProperties);
+
   processedProperties = sortHandler(processedProperties);
+
   renderProperties(currentPage, processedProperties);
 };
 
@@ -394,21 +390,19 @@ const clearFilters = () => {
   renderProperties(currentPage);
 };
 
-const setupEventListeners = () => {
-  document.querySelectorAll(".property-filters input").forEach((input) => {
-    input.addEventListener("change", applyFilters);
-  });
+document.querySelectorAll(".property-filters input").forEach((input) => {
+  input.addEventListener("change", applyAllFilters);
+});
 
-  document
-    .querySelector(".property-filters__btn")
-    .addEventListener("click", clearFilters);
+document
+  .querySelector(".property-filters__btn")
+  .addEventListener("click", clearFilters);
 
-  document.querySelectorAll(".filter-sorting__list li").forEach((item) => {
-    item.addEventListener("click", applyAllFilters);
-  });
-};
+document.querySelectorAll(".filter-sorting__list li").forEach((item) => {
+  item.addEventListener("click", applyAllFilters);
+});
 
 searchButton.addEventListener("click", applyAllFilters);
 
 // fetch and render properties on page load
-fetchProperties().then(setupEventListeners);
+fetchProperties();
