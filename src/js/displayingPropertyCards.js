@@ -403,6 +403,13 @@ document.querySelectorAll(".filter-sorting__list li").forEach((item) => {
 });
 
 searchButton.addEventListener("click", applyAllFilters);
+document
+  .querySelector(".property__search-input")
+  .addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      applyAllFilters();
+    }
+  });
 
 // fetch and render properties on page load
 fetchProperties();
