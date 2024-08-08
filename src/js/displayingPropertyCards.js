@@ -112,6 +112,10 @@ const applyFilters = (properties) => {
   );
   const minAmount = parseInt(document.getElementById("minAmount").value);
   const maxAmount = parseInt(document.getElementById("maxAmount").value);
+  const pricedUnder100k = document.getElementById("priced-under-100k").checked;
+  const hotArea = document.getElementById("hot-area").checked;
+  const vacantProperty = document.getElementById("vacant-property").checked;
+  const occupiedProperty = document.getElementById("occupied-property").checked;
 
   console.log("Initial properties:", filteredProperties);
 
@@ -181,6 +185,29 @@ const applyFilters = (properties) => {
   }
 
   console.log("After amount filter:", filteredProperties);
+
+  // Filter by featured deals
+  if (pricedUnder100k) {
+    filteredProperties = filteredProperties.filter(
+      (property) => property.price < 100000
+    );
+  }
+  if (hotArea) {
+    filteredProperties = filteredProperties.filter(
+      (property) => property.hotArea === true
+    );
+  }
+  if (vacantProperty) {
+    filteredProperties = filteredProperties.filter(
+      (property) => property.vacant === true
+    );
+  }
+  if (occupiedProperty) {
+    filteredProperties = filteredProperties.filter(
+      (property) => property.occupied === true
+    );
+  }
+
   return filteredProperties;
 };
 
