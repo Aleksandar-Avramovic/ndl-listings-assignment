@@ -100,34 +100,61 @@ const applySearch = (properties) => {
 
 const applyFilters = (properties) => {
   let filteredProperties = properties;
-  const multifamily = document.getElementById("multifamily");
-  const family = document.getElementById("family");
-  if (multifamily.checked) {
-    filteredProperties = properties.filter(
+
+  // Get filter inputs
+  const multifamily = document.getElementById("multifamily").checked;
+  const family = document.getElementById("family").checked;
+  const minSquareFeet = parseInt(
+    document.getElementById("minSquareFeet").value
+  );
+  const maxSquareFeet = parseInt(
+    document.getElementById("maxSquareFeet").value
+  );
+  const minAmount = document.getElementById("minAmount").value;
+  const maxAmount = document.getElementById("maxAmount").value;
+
+  console.log("Initial properties:", filteredProperties);
+
+  // Filter by property type (Multifamily or 1-4 family)
+  if (multifamily && !family) {
+    filteredProperties = filteredProperties.filter(
       (property) => property.type === "Multifamily"
     );
-  }
-
-  if (family.checked) {
-    filteredProperties = properties.filter(
+  } else if (!multifamily && family) {
+    filteredProperties = filteredProperties.filter(
       (property) => property.type === "1-4 family"
     );
-  }
-
-  if (multifamily.checked && family.checked) {
+  } else if (multifamily && family) {
+  } else {
     filteredProperties = properties;
   }
 
-  let minSquareFeet = parseInt(document.getElementById("minSquareFeet").value);
+  console.log("After type filter:", filteredProperties);
 
-  let maxSquareFeet = parseInt(document.getElementById("maxSquareFeet").value);
-
-  if (minSquareFeet < maxSquareFeet) {
-    filteredProperties = properties
-      .filter((property) => property.squareFeet >= minSquareFeet)
-      .filter((property) => property.squareFeet <= maxSquareFeet);
+  // Filter by square feet if values are valid
+  if (
+    !isNaN(minSquareFeet) &&
+    !isNaN(maxSquareFeet) &&
+    minSquareFeet < maxSquareFeet
+  ) {
+    filteredProperties = filteredProperties.filter(
+      (property) =>
+        property.squareFeet >= minSquareFeet &&
+        property.squareFeet <= maxSquareFeet
+    );
+  } else if (!isNaN(minSquareFeet) && isNaN(maxSquareFeet)) {
+    // Only minSquareFeet is provided
+    filteredProperties = filteredProperties.filter(
+      (property) => property.squareFeet >= minSquareFeet
+    );
+  } else if (isNaN(minSquareFeet) && !isNaN(maxSquareFeet)) {
+    // Only maxSquareFeet is provided
+    filteredProperties = filteredProperties.filter(
+      (property) => property.squareFeet <= maxSquareFeet
+    );
   }
 
+  console.log("After square feet filter:", filteredProperties);
   return filteredProperties;
 };
 
@@ -136,7 +163,6 @@ const applyAllFilters = () => {
 
   // Start with the original properties array
   let updatedProperties = properties;
-  console.log(updatedProperties);
 
   // Apply search
   updatedProperties = applySearch(updatedProperties);
@@ -374,6 +400,20 @@ const renderPagination = (properties) => {
   pagination.appendChild(nextButton);
 };
 
+// Function to restrict input to numeric values
+const restrictToNumeric = (event) => {
+  // Allow only numeric values (0-9)
+  const key = event.key;
+
+  // Check if the key pressed is not a number and not a control key (like backspace)
+  if (
+    !/^[0-9]$/.test(key) &&
+    !["Backspace", "Tab", "ArrowLeft", "ArrowRight"].includes(key)
+  ) {
+    event.preventDefault(); // Prevent the default action of the key press
+  }
+};
+
 const clearFilters = () => {
   document.querySelector(".property__search-input").value = "";
   document
@@ -393,13 +433,29 @@ const clearFilters = () => {
   renderProperties(currentPage, properties);
 };
 
-document.querySelectorAll(".property-filters input").forEach((input) => {
-  input.addEventListener("change", applyAllFilters);
-});
+// document.querySelectorAll(".property-filters input").forEach((input) => {
+//   input.addEventListener("input", () => {
+//     restrictTonumeric(event);
+//     applyAllFilters()});
+// });
 
 document
   .querySelector(".property-filters__btn")
   .addEventListener("click", clearFilters);
+
+document.querySelectorAll('input[type="checkbox"]').forEach((input) => {
+  input.addEventListener("change", applyAllFilters);
+});
+document.querySelectorAll('input[type="number"]').forEach((input) => {
+  input.addEventListener("keydown", () => {
+    restrictToNumeric(event);
+  });
+});
+document.querySelectorAll('input[type="number"]').forEach((input) => {
+  input.addEventListener("input", () => {
+    applyAllFilters();
+  });
+});
 
 document.querySelectorAll(".filter-sorting__list li").forEach((item) => {
   item.addEventListener("click", applyAllFilters);
