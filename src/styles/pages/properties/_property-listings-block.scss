@@ -20,6 +20,10 @@
   }
 }
 
+.property-cards.inactive {
+  display: none;
+}
+
 .pagination__holder {
   display: flex;
   justify-content: flex-end;
@@ -31,6 +35,10 @@
     justify-content: center;
     margin: 20px auto;
   }
+}
+
+.pagination__holder.inactive {
+  display: none;
 }
 
 .pagination-button {

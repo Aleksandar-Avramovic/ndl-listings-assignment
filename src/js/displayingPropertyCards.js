@@ -117,8 +117,6 @@ const applyFilters = (properties) => {
   const vacantProperty = document.getElementById("vacant-property").checked;
   const occupiedProperty = document.getElementById("occupied-property").checked;
 
-  console.log("Initial properties:", filteredProperties);
-
   // Filter by property type (Multifamily or 1-4 family)
   if (multifamily && !family) {
     filteredProperties = filteredProperties.filter(
@@ -132,8 +130,6 @@ const applyFilters = (properties) => {
   } else {
     filteredProperties = properties;
   }
-
-  console.log("After type filter:", filteredProperties);
 
   // Filter by square feet if values are valid
   if (
@@ -158,8 +154,6 @@ const applyFilters = (properties) => {
     );
   }
 
-  console.log("After square feet filter:", filteredProperties);
-
   // Filter by amount of units if values are valid
   if (
     !isNaN(minAmount) &&
@@ -183,8 +177,6 @@ const applyFilters = (properties) => {
       (property) => property.numberOfUnits <= maxAmount
     );
   }
-
-  console.log("After amount filter:", filteredProperties);
 
   // Filter by featured deals
   if (pricedUnder100k) {
@@ -232,45 +224,54 @@ const applyAllFilters = () => {
 const renderProperties = (page, data) => {
   const propertyListings = document.querySelector(".property-cards");
   propertyListings.innerHTML = "";
+  const noResultsMessage = document.querySelector(".no-results");
+  const paginationHolder = document.querySelector(".pagination__holder");
+  if (data.length === 0) {
+    propertyListings.classList.add("inactive");
+    noResultsMessage.classList.add("active");
+    paginationHolder.classList.add("inactive");
+  } else {
+    propertyListings.classList.remove("inactive");
+    noResultsMessage.classList.remove("active");
+    paginationHolder.classList.remove("inactive");
+    const startIndex = (page - 1) * propertiesPerPage;
+    const endIndex = startIndex + propertiesPerPage;
 
-  const startIndex = (page - 1) * propertiesPerPage;
-  const endIndex = startIndex + propertiesPerPage;
+    const paginatedProperties = data.slice(startIndex, endIndex);
 
-  const paginatedProperties = data.slice(startIndex, endIndex);
+    paginatedProperties.forEach((property) => {
+      // Create a div element  for the property
+      const propertyCard = document.createElement("div");
+      propertyCard.classList.add("property-listings__card");
+      propertyCard.classList.add("grid");
 
-  paginatedProperties.forEach((property) => {
-    // Create a div element  for the property
-    const propertyCard = document.createElement("div");
-    propertyCard.classList.add("property-listings__card");
-    propertyCard.classList.add("grid");
+      const handleDate = (status) => {
+        if (status === "Live") {
+          return "End date";
+        } else if (status === "Completed") {
+          return "Auction Finished";
+        } else {
+          return "Start date";
+        }
+      };
 
-    const handleDate = (status) => {
-      if (status === "Live") {
-        return "End date";
-      } else if (status === "Completed") {
-        return "Auction Finished";
-      } else {
-        return "Start date";
-      }
-    };
+      const handleBid = (status) => {
+        if (status === "Live") {
+          return "Current";
+        } else if (status === "Completed") {
+          return "Winning";
+        } else {
+          return "Starting";
+        }
+      };
 
-    const handleBid = (status) => {
-      if (status === "Live") {
-        return "Current";
-      } else if (status === "Completed") {
-        return "Winning";
-      } else {
-        return "Starting";
-      }
-    };
+      const formattedPrice = property.price.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
 
-    const formattedPrice = property.price.toLocaleString("en-US", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
-
-    // Create the HTML template for the property
-    propertyCard.innerHTML = `
+      // Create the HTML template for the property
+      propertyCard.innerHTML = `
         <div class="card__body">
                   <span class="property-listings__status--${property.status.toLowerCase()}"
                     >${property.status} Auction</span
@@ -360,13 +361,14 @@ const renderProperties = (page, data) => {
               </div>
         `;
 
-    // Append the property card to the property listings container
-    propertyListings.appendChild(propertyCard);
-  });
-  // const paginationHolder = document.createElement("div");
-  // paginationHolder.classList.add("pagination__holder");
+      // Append the property card to the property listings container
+      propertyListings.appendChild(propertyCard);
+    });
+    // const paginationHolder = document.createElement("div");
+    // paginationHolder.classList.add("pagination__holder");
 
-  renderPagination(data);
+    renderPagination(data);
+  }
 };
 
 // Displaying Pagination

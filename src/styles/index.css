@@ -2458,6 +2458,10 @@ input[type=number] {
   }
 }
 
+.property-cards.inactive {
+  display: none;
+}
+
 .pagination__holder {
   display: flex;
   justify-content: flex-end;
@@ -2473,6 +2477,10 @@ input[type=number] {
     justify-content: center;
     margin: 20px auto;
   }
+}
+
+.pagination__holder.inactive {
+  display: none;
 }
 
 .pagination-button, .pagination-prev,
@@ -2524,4 +2532,45 @@ input[type=number] {
 
 .pagination-next svg {
   transform: rotate(-90deg);
+}
+
+.no-results {
+  display: none;
+}
+
+.no-results__img {
+  width: 40px;
+  height: 41.07px;
+  margin-bottom: 8px;
+}
+.no-results__img img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+.no-results__title {
+  font-family: "Chap Regular", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #62636c;
+}
+
+.no-results__content {
+  font-family: "SS01 Regular", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  color: #62636c;
+}
+
+.no-results.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=index.css.map */
