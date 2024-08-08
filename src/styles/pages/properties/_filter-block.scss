@@ -111,6 +111,10 @@
     width: 100%;
     padding: 40px 25px;
   }
+
+  @media (max-width: 576px) {
+    max-width: 95%;
+  }
 }
 
 .property-filters__title {
@@ -254,6 +258,13 @@
       margin-right: 4px;
       transform: translate(-1px, -1px);
       transition: all 0.35s ease;
+      @media (max-width: 992px) {
+        transform: translate(0, 0);
+      }
+    }
+    @media (max-width: 992px) {
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -303,6 +314,7 @@
     @media (max-width: 1200px) {
       max-width: 91.5px;
     }
+
     &::placeholder {
       color: $gray-8;
     }

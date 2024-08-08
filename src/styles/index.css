@@ -2143,6 +2143,11 @@ input[type=number] {
     padding: 40px 25px;
   }
 }
+@media (max-width: 576px) {
+  .property-filters__wrap {
+    max-width: 95%;
+  }
+}
 
 .property-filters__title {
   font-family: "LGC Regular";
@@ -2282,6 +2287,17 @@ input[type=number] {
   margin-right: 4px;
   transform: translate(-1px, -1px);
   transition: all 0.35s ease;
+}
+@media (max-width: 992px) {
+  .input-checkbox label::before {
+    transform: translate(0, 0);
+  }
+}
+@media (max-width: 992px) {
+  .input-checkbox label {
+    display: flex;
+    align-items: center;
+  }
 }
 .input-checkbox label[for=hot-area]::before,
 .input-checkbox label[for=priced-under-100k]::before,
