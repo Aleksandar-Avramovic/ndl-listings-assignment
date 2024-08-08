@@ -110,8 +110,8 @@ const applyFilters = (properties) => {
   const maxSquareFeet = parseInt(
     document.getElementById("maxSquareFeet").value
   );
-  const minAmount = document.getElementById("minAmount").value;
-  const maxAmount = document.getElementById("maxAmount").value;
+  const minAmount = parseInt(document.getElementById("minAmount").value);
+  const maxAmount = parseInt(document.getElementById("maxAmount").value);
 
   console.log("Initial properties:", filteredProperties);
 
@@ -155,6 +155,32 @@ const applyFilters = (properties) => {
   }
 
   console.log("After square feet filter:", filteredProperties);
+
+  // Filter by amount of units if values are valid
+  if (
+    !isNaN(minAmount) &&
+    !isNaN(maxAmount) &&
+    minAmount < maxAmount &&
+    minAmount !== 0
+  ) {
+    filteredProperties = filteredProperties.filter(
+      (property) =>
+        property.numberOfUnits >= minAmount &&
+        property.numberOfUnits <= maxAmount
+    );
+  } else if (!isNaN(minAmount) && isNaN(maxAmount)) {
+    // Only minSquareFeet is provided
+    filteredProperties = filteredProperties.filter(
+      (property) => property.numberOfUnits >= minAmount
+    );
+  } else if (isNaN(minAmount) && !isNaN(maxAmount)) {
+    // Only maxSquareFeet is provided
+    filteredProperties = filteredProperties.filter(
+      (property) => property.numberOfUnits <= maxAmount
+    );
+  }
+
+  console.log("After amount filter:", filteredProperties);
   return filteredProperties;
 };
 
@@ -432,12 +458,6 @@ const clearFilters = () => {
   currentPage = 1;
   renderProperties(currentPage, properties);
 };
-
-// document.querySelectorAll(".property-filters input").forEach((input) => {
-//   input.addEventListener("input", () => {
-//     restrictTonumeric(event);
-//     applyAllFilters()});
-// });
 
 document
   .querySelector(".property-filters__btn")
