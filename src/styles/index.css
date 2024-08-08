@@ -2058,7 +2058,7 @@ input[type=number] {
 }
 @media (max-width: 992px) {
   .property-filters {
-    display: block;
+    display: none;
     position: fixed;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -2074,6 +2074,21 @@ input[type=number] {
   display: block;
 }
 
+.popup__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 24px;
+  height: 24px;
+}
+.popup__close-icon svg {
+  height: 24px;
+  width: 24px;
+}
+
 .property-filters-overlay {
   visibility: hidden;
   position: fixed;
@@ -2085,6 +2100,7 @@ input[type=number] {
   background-color: #1e1f24;
   opacity: 0;
   transition: 0.35s ease;
+  z-index: -1;
 }
 @media (max-width: 992px) {
   .property-filters-overlay {
@@ -2103,6 +2119,7 @@ input[type=number] {
 }
 
 .property-filters__wrap {
+  position: relative;
   padding-top: 23px;
   padding-right: 13px;
 }
