@@ -31,7 +31,6 @@ const getFormattedDateTwoMonthsAgo = () => {
 
 // Sort Handler
 const sortHandler = (properties) => {
-  console.log(properties);
   let sortedProperties = properties.slice();
 
   // currentPage = 1;
@@ -100,7 +99,6 @@ const applySearch = (properties) => {
 };
 
 const applyFilters = (properties) => {
-  console.log(properties);
   let filteredProperties = properties;
   const multifamily = document.getElementById("multifamily");
   const family = document.getElementById("family");
@@ -121,15 +119,13 @@ const applyFilters = (properties) => {
   }
 
   let minSquareFeet = parseInt(document.getElementById("minSquareFeet").value);
-  console.log(minSquareFeet);
 
   let maxSquareFeet = parseInt(document.getElementById("maxSquareFeet").value);
-  console.log(maxSquareFeet);
+
   if (minSquareFeet < maxSquareFeet) {
     filteredProperties = properties
       .filter((property) => property.squareFeet >= minSquareFeet)
       .filter((property) => property.squareFeet <= maxSquareFeet);
-    console.log(filteredProperties);
   }
 
   return filteredProperties;
@@ -138,13 +134,19 @@ const applyFilters = (properties) => {
 const applyAllFilters = () => {
   currentPage = 1;
 
-  let processedProperties = applySearch(properties);
+  // Start with the original properties array
+  let updatedProperties = properties;
+  console.log(updatedProperties);
 
-  processedProperties = applyFilters(processedProperties);
+  // Apply search
+  updatedProperties = applySearch(updatedProperties);
 
-  processedProperties = sortHandler(processedProperties);
+  // Apply filters
+  updatedProperties = applyFilters(updatedProperties);
+  // Apply sorting
+  updatedProperties = sortHandler(updatedProperties);
 
-  renderProperties(currentPage, processedProperties);
+  renderProperties(currentPage, updatedProperties);
 };
 
 // Displaying Properties
@@ -373,6 +375,7 @@ const renderPagination = (properties) => {
 };
 
 const clearFilters = () => {
+  document.querySelector(".property__search-input").value = "";
   document
     .querySelectorAll('.property-filters input[type="checkbox"]')
     .forEach((checkbox) => (checkbox.checked = false));
@@ -387,7 +390,7 @@ const clearFilters = () => {
     .forEach((errorMsg) => errorMsg.classList.remove("visible"));
   filteredProperties = properties;
   currentPage = 1;
-  renderProperties(currentPage);
+  renderProperties(currentPage, properties);
 };
 
 document.querySelectorAll(".property-filters input").forEach((input) => {
