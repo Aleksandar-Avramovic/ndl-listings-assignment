@@ -2075,7 +2075,7 @@ input[type=number] {
 }
 
 .popup__close {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   position: absolute;
@@ -2087,6 +2087,9 @@ input[type=number] {
 .popup__close-icon svg {
   height: 24px;
   width: 24px;
+}
+.popup__close.open {
+  display: flex;
 }
 
 .property-filters-overlay {
