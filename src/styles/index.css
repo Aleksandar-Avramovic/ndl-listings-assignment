@@ -2068,10 +2068,13 @@ input[type=number] {
     height: 100%;
     margin-left: 0;
     padding-inline: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
   }
 }
 .property-filters.open {
   display: block;
+  z-index: 999;
 }
 
 .popup__close {
