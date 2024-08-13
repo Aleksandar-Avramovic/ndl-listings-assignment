@@ -2422,6 +2422,7 @@ input[type=number] {
   color: #3e8028;
   padding: 3px 10px;
   margin-top: 10px;
+  margin-right: 20px;
   transition: all 0.35s ease;
 }
 @media (min-width: 1200px) {
@@ -2431,6 +2432,17 @@ input[type=number] {
     color: #6dbc56;
     box-shadow: 0 8px 24px 0 rgba(38, 65, 31, 0.16);
   }
+}
+
+.property-filters__search-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 122px;
+  padding: 3px 10px;
+}
+.property-filters__search-btn.open {
+  display: inline-block;
 }
 
 .property-listing-block {
