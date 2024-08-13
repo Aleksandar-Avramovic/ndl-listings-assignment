@@ -2352,6 +2352,12 @@ input[type=number] {
     max-width: 91.5px;
   }
 }
+@media (max-width: 992px) {
+  .input-range input {
+    max-width: 100%;
+    width: 100%;
+  }
+}
 .input-range input::-moz-placeholder {
   color: #b9bbc6;
 }
@@ -2369,6 +2375,11 @@ input[type=number] {
   .input-range input:hover {
     border: 1px solid #6dbc56;
     outline: none;
+  }
+}
+@media (max-width: 992px) {
+  .input-range {
+    width: 48%;
   }
 }
 
